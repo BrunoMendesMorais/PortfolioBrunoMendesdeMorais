@@ -18,3 +18,8 @@ Bem-vindo ao repositório do meu portfólio! Este projeto foi desenvolvido para 
 - Área adiministrativa que permite adicionar editar e excluir elementos exibidos ao usuario
 
   
+## commit
+🟢 novo
+🔵 nova versão
+🔴 correção de erro
+🟣 readme
