@@ -1,0 +1,228 @@
+/* ---------- sub tituolo ---------- */
+h3{
+    font-size: 50px;
+    font-weight: normal;
+    text-align: center;
+    padding: 20px 0 20px;
+}
+
+/* --- tema --- */
+
+.claro h3{
+   color: var(--cor-texto3-claro);
+}
+.escuro h3{
+   color: var(--cor-texto3-escuro);
+}
+
+/* --- responsividade --- */
+
+@media (max-width:750px){
+    h3{
+        font-size: 40px;
+    }
+}
+
+@media (max-width:450px){
+    h3{
+        font-size: 30px;
+    }
+}
+
+/* ---------- texto ---------- */
+main{
+    font-size: 25px;
+}
+
+/* --- tema --- */
+
+.claro main{
+    color: var(--cor-texto2-claro);
+}
+.escuro main{
+    color: var(--cor-texto-escuro);
+}
+
+/* --- responsividade --- */
+
+@media (max-width:750px){
+    main{
+        font-size: 20px;
+    }
+}
+
+@media (max-width:450px){
+    main{
+        font-size: 15px;
+    }
+}
+@media (max-width:350px){
+    main{
+        font-size: 10px;
+    }
+}
+
+/* ---------- apresentacao ---------- */
+#presentacao {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+#presentacao h1 {
+    font-size: 120px;
+    font-weight: normal;
+}
+
+#presentacao h2 {
+    font-size: 90px;
+    margin-top: -80px;
+    font-weight: normal;
+}
+
+#presentacao img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 100%;
+    margin-top: 10px;
+}
+
+/* --- tema --- */
+
+.escuro #presentacao h1 {
+    color: var(--cor-texto3-escuro);
+}
+
+.claro #presentacao h1 {
+    color: var(--cor-texto3-claro);
+}
+
+.escuro #presentacao h2 {
+    color: var(--cor-texto-escuro);
+}
+
+.claro #presentacao h2 {
+    color: var(--cor-texto2-claro);
+}
+
+/* --- responsividade --- */
+
+@media (max-width: 1050px) {
+    #presentacao h1 {
+        font-size: 100px;
+    }
+
+    #presentacao h2 {
+        font-size: 80px;
+    }
+
+    #presentacao img {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 900px) {
+    #presentacao h1 {
+        font-size: 80px;
+    }
+
+    #presentacao h2 {
+        font-size: 60px;
+        margin-top: -60px;
+    }
+
+    #presentacao img {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 700px) {
+    #presentacao h1 {
+        font-size: 60px;
+    }
+
+    #presentacao h2 {
+        font-size: 50px;
+        margin-top: -40px;
+    }
+
+    #presentacao img {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 550px) {
+    #presentacao h1 {
+        font-size: 50px;
+    }
+
+    #presentacao h2 {
+        font-size: 40px;
+        margin-top: -40px;
+    }
+
+    #presentacao img {
+        width: 230px;
+        height: 230px;
+    }
+}
+
+@media (max-width: 450px) {
+    #presentacao h1 {
+        font-size: 40px;
+    }
+
+    #presentacao h2 {
+        font-size: 30px;
+        margin-top: -25px;
+    }
+
+    #presentacao img {
+        width: 190px;
+        height: 190px;
+    }
+}
+@media (max-width: 350px) {
+    #presentacao h1 {
+        font-size: 30px;
+    }
+
+    #presentacao h2 {
+        font-size: 20px;
+        margin-top: -20px;
+    }
+
+    #presentacao img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 260px) {
+    #presentacao h1 {
+        font-size: 23px;
+    }
+
+    #presentacao h2 {
+        font-size: 17px;
+        margin-top: -14px;
+    }
+
+    #presentacao img {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+/* ---------- sobreMim ---------- */
+#sobreMim p{
+    text-align: center;
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+}
+
