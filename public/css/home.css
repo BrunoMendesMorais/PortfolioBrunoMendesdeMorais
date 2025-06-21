@@ -25,7 +25,7 @@ h3{
 
 @media (max-width:450px){
     h3{
-        font-size: 30px;
+        font-size: 25px;
     }
 }
 
@@ -219,10 +219,20 @@ main{
 }
 
 /* ---------- sobreMim ---------- */
+#sobreMim{
+    text-align: center;
+}
 #sobreMim p{
     text-align: center;
     width: 80%;
     max-width: 1000px;
     margin: auto;
+    margin-bottom: 1.2%;
+}
+
+#sobreMim a{
+    margin: auto;
+    font-size:0.6em;
+    border-bottom: 0.15em solid currentColor;
 }
 
