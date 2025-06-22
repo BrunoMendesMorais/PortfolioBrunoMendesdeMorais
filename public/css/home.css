@@ -358,39 +358,48 @@ main {
         width: 450px;
     }
 }
+
 @media (max-width:450px) {
-    #contato address svg{
+    #contato address svg {
         width: 50px;
     }
+
     #contato address {
         width: 350px;
         height: 100px;
         border-radius: 10px;
     }
-     #contato address a{
+
+    #contato address a {
         border-end-end-radius: 10px;
-     }
+    }
 }
 
 @media (max-width:450px) {
-    #contato address svg{
+    #contato address svg {
         width: 50px;
     }
+
     #contato address {
         width: 350px;
         height: 100px;
+        grid-template-areas: 'img text' 'btn btn';
+    }
+
+    #contato address a {
+        width: 100%;
+        border-end-end-radius: 10px;
+        border-end-start-radius: 10px;
     }
 }
+
 @media (max-width:350px) {
-    #contato address svg{
+    #contato address svg {
         width: 100%;
     }
+
     #contato address {
         width: 90%;
         height: 100px;
     }
-     #contato address a{
-        width: 80%;
-        border-end-end-radius: 10px;
-     }
 }
