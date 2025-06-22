@@ -26,6 +26,19 @@
 
     <section id="projetos">
         <h3>PROJETOS</h3>
+        <div>
+            <form action="/" method="#">
+                <input name="Pesquisa" autocomplete="off" id="Pesquisa" placeholder="procure por tecnologia ou projeto..." type="search">
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                        <rect width="256" height="256" fill="none" />
+                        <circle cx="112" cy="112" r="80" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+                        <line x1="168.57" y1="168.57" x2="224" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
+                    </svg>
+                </button>
+            </form>
+            <a href="">VER TODOS</a>
+        </div>
     </section>
 
     <section id="conhecimento">

@@ -403,3 +403,47 @@ main {
         height: 100px;
     }
 }
+
+/* ---------- barra de pesquisa ---------- */
+#projetos div{
+    display: flex;
+    width: 100%;
+}
+
+#projetos form{
+    width: 800px;
+    height: 35px;
+    color: #000;
+    display: grid;
+    grid-template-columns: calc(100% - 40px) 35px;
+}
+#projetos form input{
+    width: 100%;
+    height: 100%;
+    padding-left: 2%;
+    
+}
+#projetos form input::placeholder{
+    color: #535353;
+}
+#projetos form button svg{
+    transform: rotateZ(90deg);
+    padding: 4px;
+}
+
+/* --- tema --- */
+.escuro #projetos form  input,
+.escuro #projetos form button{
+    background-color: var(--cor-texto-escuro);
+    border: none;
+    outline: none;
+}
+.claro #projetos form input,
+.claro #projetos form button{
+    background-color: var(--cor-terciaria-claro);
+    border: none;
+    outline: none;
+}
+.claro #projetos div a{
+    background-color: var(--cor-terciaria-claro);
+}
