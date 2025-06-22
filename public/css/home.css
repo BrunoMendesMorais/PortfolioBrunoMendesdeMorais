@@ -234,5 +234,8 @@ main{
     margin: auto;
     font-size:0.6em;
     border-bottom: 0.15em solid currentColor;
+    cursor: pointer;
 }
-
+#sobreMim pre{
+    text-align: center;
+}

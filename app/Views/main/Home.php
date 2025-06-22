@@ -3,7 +3,7 @@
 <?= $this->section('head') ?>
 
 <link rel="stylesheet" href="css/home.css">
-
+    <script src="js/main/Home.js" defer></script>
 <?= $this->endsection('head') ?>
 
 <?= $this->section('conteudo') ?>
@@ -18,7 +18,10 @@
     <section id="sobreMim">
         <h3>SOBRE MIM</h3>
         <p>Sou um desenvolvedor de software focado na area da web tenho habilidades tanto no frontend quanto no backend</p>
-        <a>VER MAIS</a>
+        <section id="maisSobreMim">
+            
+        </section>
+        <a id="verMaisSobreMim">VER MAIS</a>
     </section>
 
     <section id="projetos">
