@@ -1,5 +1,5 @@
 /* ---------- sub tituolo ---------- */
-h3{
+h3 {
     font-size: 50px;
     font-weight: normal;
     text-align: center;
@@ -8,56 +8,59 @@ h3{
 
 /* --- tema --- */
 
-.claro h3{
-   color: var(--cor-texto3-claro);
+.claro h3 {
+    color: var(--cor-texto3-claro);
 }
-.escuro h3{
-   color: var(--cor-texto3-escuro);
+
+.escuro h3 {
+    color: var(--cor-texto3-escuro);
 }
 
 /* --- responsividade --- */
 
-@media (max-width:750px){
-    h3{
+@media (max-width:750px) {
+    h3 {
         font-size: 40px;
     }
 }
 
-@media (max-width:450px){
-    h3{
+@media (max-width:450px) {
+    h3 {
         font-size: 25px;
     }
 }
 
 /* ---------- texto ---------- */
-main{
+main {
     font-size: 25px;
 }
 
 /* --- tema --- */
 
-.claro main{
+.claro main {
     color: var(--cor-texto2-claro);
 }
-.escuro main{
+
+.escuro main {
     color: var(--cor-texto-escuro);
 }
 
 /* --- responsividade --- */
 
-@media (max-width:750px){
-    main{
+@media (max-width:750px) {
+    main {
         font-size: 20px;
     }
 }
 
-@media (max-width:450px){
-    main{
+@media (max-width:450px) {
+    main {
         font-size: 15px;
     }
 }
-@media (max-width:350px){
-    main{
+
+@media (max-width:350px) {
+    main {
         font-size: 10px;
     }
 }
@@ -186,6 +189,7 @@ main{
         height: 190px;
     }
 }
+
 @media (max-width: 350px) {
     #presentacao h1 {
         font-size: 30px;
@@ -219,10 +223,11 @@ main{
 }
 
 /* ---------- sobreMim ---------- */
-#sobreMim{
+#sobreMim {
     text-align: center;
 }
-#sobreMim p{
+
+#sobreMim p {
     text-align: center;
     width: 80%;
     max-width: 1000px;
@@ -230,34 +235,162 @@ main{
     margin-bottom: 1.2%;
 }
 
-#sobreMim a{
+#sobreMim a {
     margin: auto;
-    font-size:0.6em;
+    font-size: 0.6em;
     border-bottom: 0.15em solid currentColor;
     cursor: pointer;
 }
-#sobreMim pre{
+
+#sobreMim pre {
     text-align: center;
 }
 
-#conhecimento{
+/* ---------- conhecimento ---------- */
+
+#conhecimento {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-#conhecimento section{
+#conhecimento section {
     width: 800px;
     max-width: 80%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
     gap: 100px;
+    margin-bottom: 2%;
 }
-#conhecimento section svg{
+
+#conhecimento section svg {
     width: 50px;
-    max-width: 80%;
+    max-width: 90%;
     height: 50px;
     margin: auto;
+}
+
+#conhecimento section svg:hover {
+    scale: 1.3;
+}
+
+/* ---------- contato ---------- */
+#contato address {
+    width: 700px;
+    border-radius: 30px;
+    height: 150px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 70% 30%;
+    grid-template-areas: 'img text' 'img btn';
+    margin: auto;
+    margin-bottom: 2%;
+    align-items: center;
+    justify-content: center;
+}
+
+#contato address svg {
+    width: 80px;
+    grid-area: img;
+    margin: auto;
+}
+
+#contato address a {
+    grid-area: btn;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-end-end-radius: 30px;
+    justify-content: center;
+    width: 200px;
+    margin-left: auto;
+}
+
+#contato address p {
+    grid-area: text;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: -4%;
+    overflow: hidden;
+}
+
+/* --- tema --- */
+
+.escuro #contato address {
+    background-color: var(--cor-terciaria-escuro);
+}
+
+.claro #contato address {
+    background-color: var(--cor-terciaria-claro);
+    color: var(--cor-texto2-claro);
+}
+
+.escuro #contato address a {
+    background-color: var(--cor-texto-escuro);
+    color: #000;
+}
+
+.claro #contato address a {
+    background-color: var(--cor-primaria-claro);
+    color: #fff;
+}
+
+/* --- responsividade --- */
+
+
+@media (max-width:750px) {
+    #contato address {
+        width: 600px;
+    }
+}
+
+@media (max-width:650px) {
+    #contato address {
+        width: 500px;
+    }
+}
+
+@media (max-width:510px) {
+    #contato address {
+        width: 450px;
+    }
+}
+@media (max-width:450px) {
+    #contato address svg{
+        width: 50px;
+    }
+    #contato address {
+        width: 350px;
+        height: 100px;
+        border-radius: 10px;
+    }
+     #contato address a{
+        border-end-end-radius: 10px;
+     }
+}
+
+@media (max-width:450px) {
+    #contato address svg{
+        width: 50px;
+    }
+    #contato address {
+        width: 350px;
+        height: 100px;
+    }
+}
+@media (max-width:350px) {
+    #contato address svg{
+        width: 100%;
+    }
+    #contato address {
+        width: 90%;
+        height: 100px;
+    }
+     #contato address a{
+        width: 80%;
+        border-end-end-radius: 10px;
+     }
 }

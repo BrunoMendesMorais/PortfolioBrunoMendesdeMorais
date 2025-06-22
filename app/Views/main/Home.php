@@ -81,7 +81,28 @@
     </section>
 
     <section id="contato">
-        <h3>CONTATO<h3>
+        <h3>CONTATO</h3>
+        <address>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none" />
+                <path d="M32,56H224a0,0,0,0,1,0,0V192a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56A0,0,0,0,1,32,56Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                <polyline points="224 56 128 144 32 56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+            </svg>
+            <p>mendesdemoraisbruno@gmail.com</p>
+            <a href="">Copiar</a>
+        </address>
+        <address>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <rect fill="none" />
+                <rect x="32" y="32" width="192" height="192" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                <line x1="120" y1="112" x2="120" y2="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                <line x1="88" y1="112" x2="88" y2="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                <path d="M120,140a28,28,0,0,1,56,0v36" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                <circle fill="currentColor" cx="88" cy="84" r="12" />
+            </svg>
+            <p>www.linkedin.com/in/bruno-mendes-de-morais</p>
+            <a href="">Ir para</a>
+        </address>
     </section>
 </main>
 

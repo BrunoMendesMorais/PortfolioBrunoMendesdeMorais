@@ -15,6 +15,7 @@ a {
 :root {
     --cor-primaria-escuro: #010124;
     --cor-secundaria-escuro: #07072F;
+    --cor-terciaria-escuro: #13132F;
     --cor-fundo-escuro: #0E0E21;
     --cor-texto-escuro: #C5C5FF;
     --cor-texto2-escuro: #FFFF;
@@ -22,6 +23,7 @@ a {
 
     --cor-primaria-claro: #A6A6A6;
     --cor-secundaria-claro: #B4B4B4;
+    --cor-terciaria-claro: #EEEEEE;
     --cor-fundo-claro: #fff;
     --cor-texto-claro: #FFFF;
     --cor-texto2-claro: #000;
@@ -335,12 +337,12 @@ main {
 }
 
 .claro .topcosNav a,
-.claro address svg {
+.claro #navegacaoLateral address svg {
     color: var(--cor-texto-claro);
 }
 
 .escuro .topcosNav a,
-.escuro address svg {
+.escuro #navegacaoLateral address svg {
     color: var(--cor-texto-escuro);
 }
 
@@ -350,7 +352,7 @@ main {
 
 .claro #navegacaoLateral {
     background-color: var(--cor-primaria-claro);
-    color: var(--cor-texto2-claro);
+    color: var(--cor-texto-claro);
 }
 
 .escuro #navegacaoLateral {
