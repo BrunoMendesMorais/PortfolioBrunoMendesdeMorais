@@ -239,3 +239,25 @@ main{
 #sobreMim pre{
     text-align: center;
 }
+
+#conhecimento{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#conhecimento section{
+    width: 800px;
+    max-width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 100px;
+}
+#conhecimento section svg{
+    width: 50px;
+    max-width: 80%;
+    height: 50px;
+    margin: auto;
+}
