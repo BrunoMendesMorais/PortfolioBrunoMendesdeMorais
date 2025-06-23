@@ -12,11 +12,20 @@ Bem-vindo ao repositório do meu portfólio! Este projeto foi desenvolvido para 
 
 ## 🛠️ Funcionalidades
 
-- Sessão de projetos com imagens e links para repositórios e videos explicativos
-- informar redes de contato
-- Responsivo
-- Área adiministrativa que permite adicionar editar e excluir elementos exibidos ao usuario
-
+### parte 1
+- [x] Responsivo
+- [x] troca de temas
+- [x] troca de temas por seletor
+- [x] troca de tema por padrão do do navegador
+- [x] salvar troca de tema feita pelo usuario
+- [ ] link de redes sociais
+- [ ] link de contatos
+- [x] Seção de apresentação
+- [x] seção de projetos
+- [x] seção de conhecimentos
+- [ ] seção de contatos
+- [ ] area de exibição de todos os projetos
+- [ ] area de detalhe de projetos
   
 ## commit
 🟢 novo
