@@ -631,14 +631,81 @@ main {
     #projetosProgramacao article section {
         scale: 1;
     }
-
-    #projetosProgramacao article a {
-        text-decoration: underline;
-        color: currentColor;
-        font-size: 1em;
-    }
-
     #projetosProgramacao article div {
         scale: 1;
+    }
+}
+@media (max-width: 630px) {
+
+    #projetosProgramacao article {
+        width: 470px;
+        height: 300px;
+    }
+
+    #projetosProgramacao article section {
+        scale: 0.95;
+    }
+
+    #projetosProgramacao article h4 {
+        padding-left: 2%;
+    }
+    #projetosProgramacao article div {
+        scale: 0.8;
+    }
+}
+@media (max-width: 630px) {
+
+    #projetosProgramacao article {
+        width: 470px;
+        height: 300px;
+    }
+
+    #projetosProgramacao article section {
+        scale: 0.95;
+    }
+
+    #projetosProgramacao article h4 {
+        padding-left: 2%;
+    }
+    #projetosProgramacao article div {
+        scale: 0.8;
+    }
+}
+@media (max-width: 500px) {
+
+    #projetosProgramacao article {
+        width: 95dvw;
+        height: 60dvw
+    }
+
+    #projetosProgramacao article section {
+        scale: 0.95;
+    }
+
+    #projetosProgramacao article h4 {
+        padding-left: 2%;
+    }
+    #projetosProgramacao article div {
+        width: 7dvw;
+        height: 7dvw;
+    }
+}
+
+@media (max-width: 350px) {
+
+    #projetosProgramacao article {
+        width: 95dvw;
+        height: 60dvw
+    }
+
+    #projetosProgramacao article section {
+        scale: 0.95;
+    }
+
+    #projetosProgramacao article h4 {
+        font-size: 4dvw;
+    }
+    #projetosProgramacao article div {
+        font-size: 4dvw;
     }
 }
