@@ -340,7 +340,6 @@ main {
 
 /* --- responsividade --- */
 
-
 @media (max-width:750px) {
     #contato address {
         width: 600px;
@@ -407,14 +406,13 @@ main {
 /* ---------- barra de pesquisa ---------- */
 #projetos div {
     display: flex;
-    width: 1100px;
-    max-width: 90%;
+    width: 1250px;
     margin: auto;
     justify-content: space-around;
 }
 
 #projetos form {
-    width: 800px;
+    width: 1000px;
     height: 35px;
     color: #000;
     display: grid;
@@ -470,6 +468,15 @@ main {
     background-color: var(--cor-texto-escuro);
 }
 
+/* --- responsividade --- */
+
+@media (max-width:1249px) {
+    #projetos div {
+        max-width: 95%;
+    }
+}
+
+
 @media (max-width:550px) {
     #projetos div a {
         font-size: 0.8rem;
@@ -489,11 +496,149 @@ main {
         font-size: 0.8rem;
     }
 }
+
 @media (max-width:350px) {
     #projetos div a {
         display: none;
     }
-     #projetos form input {
-        font-size: 0.6rem;
+
+    #projetos form input {
+        font-size: 0.68rem;
+    }
+}
+
+/* ---------- projetos ---------- */
+#projetosProgramacao {
+    display: grid;
+    width: 1250px;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    margin-top: 2%;
+}
+
+#projetosProgramacao article * {
+    max-width: 100%;
+}
+
+#projetosProgramacao article {
+    width: 600px;
+    height: 350px;
+    margin: auto;
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: 8% 92%;
+    grid-template-rows: 80% 10% 10%;
+    padding: 1%;
+    border-radius: 10px;
+    grid-template-areas: 'section img' 'div h4' 'a a';
+}
+
+#projetosProgramacao article section {
+    padding: 15%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 15%;
+    grid-area: section;
+}
+
+#projetosProgramacao article img {
+    grid-area: img;
+}
+
+#projetosProgramacao article h4 {
+    grid-area: h4;
+    font-size: 1em;
+    font-weight: normal;
+    padding-left: 2%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#projetosProgramacao article a {
+    grid-area: a;
+    text-align: end;
+    text-decoration: underline;
+    color: currentColor;
+    font-size: 0.8em;
+    padding-right: 2%;
+}
+
+#projetosProgramacao article div {
+    grid-area: div;
+    border: 1px solid currentColor;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+/* --- tema --- */
+
+.claro #projetosProgramacao article {
+    background-color: var(--cor-terciaria-claro);
+}
+
+.escuro #projetosProgramacao article {
+    background-color: var(--cor-terciaria-escuro);
+}
+
+/* --- responsividade --- */
+
+@media (max-width: 1280px) {
+
+    #projetosProgramacao {
+        width: 1000px;
+    }
+
+    #projetosProgramacao article {
+        width: 470px;
+        height: 300px;
+    }
+
+    #projetosProgramacao article section {
+        scale: 0.95;
+    }
+
+    #projetosProgramacao article h4 {
+        font-size: 1em;
+        padding-left: 2%;
+    }
+
+    #projetosProgramacao article a {
+        text-decoration: underline;
+        color: currentColor;
+        font-size: 0.8em;
+    }
+
+    #projetosProgramacao article div {
+        scale: 0.8;
+    }
+}
+@media (max-width: 1020px) {
+    #projetosProgramacao {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+        #projetosProgramacao article {
+        width: 600px;
+        height: 350px;
+    }
+
+    #projetosProgramacao article section {
+        scale: 1;
+    }
+
+    #projetosProgramacao article a {
+        text-decoration: underline;
+        color: currentColor;
+        font-size: 1em;
+    }
+
+    #projetosProgramacao article div {
+        scale: 1;
     }
 }

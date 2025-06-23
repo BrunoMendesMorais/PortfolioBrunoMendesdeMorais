@@ -95,7 +95,7 @@ main {
 }
 
 .claro #header a {
-    color: var(--cor-texto2-claro);
+    color: var(--cor-texto-claro);
 }
 
 .escuro #header a {
