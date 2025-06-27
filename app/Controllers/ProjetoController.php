@@ -11,4 +11,8 @@ class ProjetoController extends BaseController
     {
         return view("main/Projetos");
     }
+    public function DetalheDoProjeto()
+    {
+        return view("main/DetalheDoProjeto");
+    }
 }
