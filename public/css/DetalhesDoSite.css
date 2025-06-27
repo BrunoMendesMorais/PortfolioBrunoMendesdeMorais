@@ -14,13 +14,12 @@ main{
     max-width: 1600px;
     height: 500px;
     margin: auto;
-    background-color: red;
     margin-top: 1%;
     display: grid;
     grid-template-areas: "img h2" "img p" "img ver" "section section" "link link";
     grid-template-columns: 600px calc(100% - 600px);
-    grid-template-rows: 12% 20% 28% 30% 10%;
-    padding: 0.5%;
+    grid-template-rows: 12% 28% 20% 30% 10%;
+    padding: 1%;
     border-radius: 10px;
 }
 
@@ -29,7 +28,7 @@ main{
     grid-area: img;
     height: 100%;
     object-fit: cover;
-
+    padding-right:2% ;
 }
 
 #informacaoProjeto h2 {
@@ -53,21 +52,33 @@ main{
     width: 100%;
     height: calc(100% - 1.5em);
     justify-content: space-between;
+    align-items: end;
+}
+
+#informacaoProjeto #Ver div a{
+    display: flex;
     align-items: center;
+}
+#informacaoProjeto #Ver div a svg{
+    height: 40px;
+}
+
+#informacaoProjeto section {
+    margin-top: 5%;
 }
 
 #informacaoProjeto section div {
     grid-area: section;
     display: flex;
     gap: 2%;
-    margin-top:4%;
+    margin-top:3%;
 }
 
 #informacaoProjeto section article {
     display: flex;
     align-items: center;
     height: 50px;
-    padding:0.3%;
+    padding:1%;
     border-radius: 5px;
 }
 
@@ -85,6 +96,16 @@ main{
 
 #informacaoProjeto #linkVideo a{
     text-decoration:underline;
+    display: flex;
+    align-items: center;
+}
+#informacaoProjeto #linkVideo a:first-child{
+    width: 350px;
+}
+
+#informacaoProjeto #linkVideo a svg{
+    height: 1.7em;
+    margin-right: 3%;
 }
 
 .claro #informacaoProjeto {
