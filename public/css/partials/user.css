@@ -13,10 +13,10 @@ a {
 }
 
 :root {
-    --cor-primaria-escuro: #010124;
+    --cor-primaria-escuro: #010124; 
     --cor-secundaria-escuro: #07072F;
     --cor-terciaria-escuro: #13132F;
-    --cor-fundo-escuro: #0E0E21;
+    --cor-fundo-escuro: #0E0E21; 
     --cor-texto-escuro: #C5C5FF;
     --cor-texto2-escuro: #FFFF;
     --cor-texto3-escuro: #353556;

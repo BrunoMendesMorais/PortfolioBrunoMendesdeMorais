@@ -1,7 +1,15 @@
-*{
+* {
     font-weight: normal;
 }
-#informacaoProjeto{
+a{
+    color: currentColor;
+}
+main{
+    font-size: 25px;
+}
+
+/* ---------- informação sobre o projeto ---------- */
+#informacaoProjeto {
     width: 98%;
     max-width: 1600px;
     height: 500px;
@@ -11,48 +19,125 @@
     display: grid;
     grid-template-areas: "img h2" "img p" "img ver" "section section" "link link";
     grid-template-columns: 600px calc(100% - 600px);
-    grid-template-rows: 12% 20% 28% 20% 20%;
+    grid-template-rows: 12% 20% 28% 30% 10%;
     padding: 0.5%;
-    font-size: 25px;
+    border-radius: 10px;
 }
-#informacaoProjeto img{
+
+#informacaoProjeto img {
     width: 600px;
     grid-area: img;
+    height: 100%;
+    object-fit: cover;
+
 }
-#informacaoProjeto h2{
+
+#informacaoProjeto h2 {
     grid-area: h2;
     font-size: 1.5em;
     display: flex;
     align-items: center;
 }
-#informacaoProjeto p{
+
+#informacaoProjeto p {
     grid-area: p;
 }
-#informacaoProjeto #Ver{
+
+#informacaoProjeto #Ver {
     grid-area: ver;
     font-size: 0.9em;
 }
-#informacaoProjeto #Ver div{
+
+#informacaoProjeto #Ver div {
     display: flex;
     width: 100%;
     height: calc(100% - 1.5em);
     justify-content: space-between;
     align-items: center;
 }
-#informacaoProjeto section{
-    background-color: black;
+
+#informacaoProjeto section div {
     grid-area: section;
-}
-#informacaoProjeto #linkVideo{
-    background-color: brown;
-    grid-area: link;
+    display: flex;
+    gap: 2%;
+    margin-top:4%;
 }
 
-.claro #informacaoProjeto{
+#informacaoProjeto section article {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding:0.3%;
+    border-radius: 5px;
+}
+
+#informacaoProjeto section article svg {
+    height: 40px;
+}
+
+#informacaoProjeto #linkVideo {
+    grid-area: link;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    gap: 2%;
+}
+
+#informacaoProjeto #linkVideo a{
+    text-decoration:underline;
+}
+
+.claro #informacaoProjeto {
     background-color: var(--cor-terciaria-claro);
     color: var(--cor-texto2-claro);
 }
-.escuro  #informacaoProjeto{
-     background-color: var(--cor-terciaria-escuro);
-     color: var(--cor-texto-escuro);
+
+/* --- tema --- */
+
+.escuro #informacaoProjeto {
+    background-color: var(--cor-primaria-escuro);
+    color: var(--cor-texto-escuro);
+}
+
+.escuro #informacaoProjeto section article{
+    background-color: var( --cor-terciaria-escuro);
+}
+.claro #informacaoProjeto section article{
+    background-color: var( --cor-secundaria-claro);
+}
+
+/* ---------- descrição escrita do site ---------- */
+#descricaoEscrita{
+    width: 90%;
+    margin: auto;
+    max-width: 1600px;
+}
+#descricaoEscrita h2{
+    text-align: center;
+    margin: 3% 0 3% 0;
+}
+
+/* --- tema --- */
+
+.claro #descricaoEscrita{
+    color: var(--cor-texto2-claro);
+}
+.escuro #descricaoEscrita{
+    color: var(--cor-texto-escuro);
+}
+
+/* --------- imagem ---------- */
+#img {
+    margin-top: 2%;
+}
+#img h2{
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.claro #img{
+    color: var(--cor-texto2-claro);
+}
+.escuro #img{
+    color: var(--cor-texto-escuro);
 }
