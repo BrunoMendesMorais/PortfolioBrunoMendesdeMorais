@@ -1,175 +1,97 @@
-* {
-    font-weight: normal;
+/* ---------- topo ---------- */
+
+#topo {
+    width: 100%;
+    height: 400px;
+    background-color: red;
+    position: relative;
 }
 
-a {
-    color: currentColor;
-}
-
-main {
-    font-size: 25px;
-}
-
-/* ---------- informação sobre o projeto ---------- */
-#informacaoProjeto {
-    width: 98%;
-    max-width: 1600px;
-    height: 500px;
-    margin: auto;
-    margin-top: 1%;
+#topo div {
+    height: 100%;
+    width: 100%;
+    position: absolute;
     display: grid;
-    grid-template-areas: "img h2" "img p" "img ver" "section section" "link link";
-    grid-template-columns: 600px calc(100% - 600px);
-    grid-template-rows: 15% 25% 20% 30% 10%;
-    padding: 1%;
-    border-radius: 10px;
+    grid-template-rows: 1fr 1fr;
+    align-items: end;
 }
 
-#informacaoProjeto img {
-    width: 600px;
-    grid-area: img;
+#topo div svg {
+    width: 40px;
+    border-radius: 100%;
+}
+
+#topo div #linksProjeto {
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+    display: flex;
+}
+
+#topo div #linksProjeto a {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+#topo img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
-    padding-right: 2%;
 }
 
-#informacaoProjeto h2 {
-    grid-area: h2;
-    font-size: 1.5em;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-#informacaoProjeto p {
-    grid-area: p;
-}
-
-#informacaoProjeto #Ver {
-    grid-area: ver;
-    font-size: 0.9em;
-}
-
-#informacaoProjeto #Ver div {
+#topo div #linksVideo {
     display: flex;
-    width: 100%;
-    height: calc(100% - 1.5em);
-    justify-content: space-between;
-    align-items: end;
-}
-
-#informacaoProjeto #Ver div a {
-    display: flex;
-    align-items: center;
-}
-
-#informacaoProjeto #Ver div a svg {
-    height: 40px;
-}
-
-#informacaoProjeto section {
-    margin-top: 5%;
-}
-
-#informacaoProjeto section div {
-    grid-area: section;
-    display: flex;
-    gap: 2%;
-    margin-top: 3%;
-}
-
-#informacaoProjeto section article {
-    display: flex;
-    align-items: center;
-    height: 50px;
-    padding: 1%;
-    border-radius: 5px;
-}
-
-#informacaoProjeto section article svg {
-    height: 40px;
-}
-
-#informacaoProjeto #linkVideo {
-    grid-area: link;
-    display: flex;
-    align-items: end;
     justify-content: end;
-    gap: 2%;
+    padding-right: 10px;
 }
 
-#informacaoProjeto #linkVideo a {
-    text-decoration: underline;
+#topo div #linksVideo a {
+    margin: 10px;
     display: flex;
     align-items: center;
 }
 
-#informacaoProjeto #linkVideo a:first-child {
-    width: 350px;
-}
-
-#informacaoProjeto #linkVideo a svg {
-    height: 1.7em;
-    margin-right: 3%;
-}
-
-.claro #informacaoProjeto {
-    background-color: var(--cor-terciaria-claro);
-    color: var(--cor-texto2-claro);
-}
-
 /* --- tema --- */
 
-.escuro #informacaoProjeto {
-    background-color: var(--cor-primaria-escuro);
+.escuro #topo a {
     color: var(--cor-texto-escuro);
 }
 
-.escuro #informacaoProjeto section article {
-    background-color: var(--cor-terciaria-escuro);
-}
-
-.claro #informacaoProjeto section article {
-    background-color: var(--cor-secundaria-claro);
-}
-
-/* ---------- descrição escrita do site ---------- */
-#descricaoEscrita {
-    width: 90%;
-    margin: auto;
-    max-width: 1600px;
-}
-
-#descricaoEscrita h2 {
-    text-align: center;
-    margin: 3% 0 3% 0;
-}
-
-/* --- tema --- */
-
-.claro #descricaoEscrita {
+.claro #topo a {
     color: var(--cor-texto2-claro);
 }
 
-.escuro #descricaoEscrita {
-    color: var(--cor-texto-escuro);
+
+.escuro #topo div {
+    background-color: #000000c4;
+    ;
 }
 
-/* --------- imagem ---------- */
-#img {
-    margin-top: 2%;
+.claro #topo div {
+    background-color: #FFFFFF90;
 }
 
-#img h2 {
-    text-align: center;
-    margin-bottom: 2%;
+/* --- responsividade --- */
+
+@media (max-width:430px) {
+    #topo div #linksVideo {
+        flex-direction: column;
+        margin-left: auto;
+    }
 }
 
-.claro #img {
-    color: var(--cor-texto2-claro);
+@media (max-width:310px) {
+    #topo div #linksProjeto {
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        height: 250px;
+    }
 }
 
-.escuro #img {
-    color: var(--cor-texto-escuro);
+@media (min-width:310px) {
+    #topo div #linksProjeto {
+        justify-content: center;
+    }
 }
