@@ -57,6 +57,10 @@
         </div>
         <img src="img/projetos/projeto1.png" alt="">
     </section>
+    <section id="rotuloProjeto">
+        <h1>PORTIFOLIO DE  BRUNO MENDES DE MORAIS</h1>
+        <p>ESTE PROJETO FOI DESENVOLVIDO PARA FACILITAR A DIVULGAÇÃO DE MEUS PROJETOS</p>
+    </section>
 </main>
 <?= $this->endsection('conteudo') ?>
 
