@@ -1,10 +1,12 @@
 * {
     font-weight: normal;
 }
-a{
+
+a {
     color: currentColor;
 }
-main{
+
+main {
     font-size: 25px;
 }
 
@@ -18,7 +20,7 @@ main{
     display: grid;
     grid-template-areas: "img h2" "img p" "img ver" "section section" "link link";
     grid-template-columns: 600px calc(100% - 600px);
-    grid-template-rows: 12% 28% 20% 30% 10%;
+    grid-template-rows: 15% 25% 20% 30% 10%;
     padding: 1%;
     border-radius: 10px;
 }
@@ -28,14 +30,16 @@ main{
     grid-area: img;
     height: 100%;
     object-fit: cover;
-    padding-right:2% ;
+    padding-right: 2%;
 }
 
 #informacaoProjeto h2 {
     grid-area: h2;
     font-size: 1.5em;
-    display: flex;
-    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 #informacaoProjeto p {
@@ -55,11 +59,12 @@ main{
     align-items: end;
 }
 
-#informacaoProjeto #Ver div a{
+#informacaoProjeto #Ver div a {
     display: flex;
     align-items: center;
 }
-#informacaoProjeto #Ver div a svg{
+
+#informacaoProjeto #Ver div a svg {
     height: 40px;
 }
 
@@ -71,14 +76,14 @@ main{
     grid-area: section;
     display: flex;
     gap: 2%;
-    margin-top:3%;
+    margin-top: 3%;
 }
 
 #informacaoProjeto section article {
     display: flex;
     align-items: center;
     height: 50px;
-    padding:1%;
+    padding: 1%;
     border-radius: 5px;
 }
 
@@ -94,16 +99,17 @@ main{
     gap: 2%;
 }
 
-#informacaoProjeto #linkVideo a{
-    text-decoration:underline;
+#informacaoProjeto #linkVideo a {
+    text-decoration: underline;
     display: flex;
     align-items: center;
 }
-#informacaoProjeto #linkVideo a:first-child{
+
+#informacaoProjeto #linkVideo a:first-child {
     width: 350px;
 }
 
-#informacaoProjeto #linkVideo a svg{
+#informacaoProjeto #linkVideo a svg {
     height: 1.7em;
     margin-right: 3%;
 }
@@ -120,30 +126,33 @@ main{
     color: var(--cor-texto-escuro);
 }
 
-.escuro #informacaoProjeto section article{
-    background-color: var( --cor-terciaria-escuro);
+.escuro #informacaoProjeto section article {
+    background-color: var(--cor-terciaria-escuro);
 }
-.claro #informacaoProjeto section article{
-    background-color: var( --cor-secundaria-claro);
+
+.claro #informacaoProjeto section article {
+    background-color: var(--cor-secundaria-claro);
 }
 
 /* ---------- descrição escrita do site ---------- */
-#descricaoEscrita{
+#descricaoEscrita {
     width: 90%;
     margin: auto;
     max-width: 1600px;
 }
-#descricaoEscrita h2{
+
+#descricaoEscrita h2 {
     text-align: center;
     margin: 3% 0 3% 0;
 }
 
 /* --- tema --- */
 
-.claro #descricaoEscrita{
+.claro #descricaoEscrita {
     color: var(--cor-texto2-claro);
 }
-.escuro #descricaoEscrita{
+
+.escuro #descricaoEscrita {
     color: var(--cor-texto-escuro);
 }
 
@@ -151,14 +160,16 @@ main{
 #img {
     margin-top: 2%;
 }
-#img h2{
+
+#img h2 {
     text-align: center;
     margin-bottom: 2%;
 }
 
-.claro #img{
+.claro #img {
     color: var(--cor-texto2-claro);
 }
-.escuro #img{
+
+.escuro #img {
     color: var(--cor-texto-escuro);
 }
