@@ -11,7 +11,7 @@
      <section id="projetos">
         <h3>PROJETOS</h3>
         <div>
-            <form action="/" method="#">
+            <form action="/" method="#" style="width: 100%;">
                 <input name="Pesquisa" autocomplete="off" id="Pesquisa" placeholder="procure por tecnologia ou projeto..." type="search">
                 <button>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -21,7 +21,6 @@
                     </svg>
                 </button>
             </form>
-            <a href="">VER TODOS</a>
         </div>
         <section id="projetosProgramacao">
             <article>
