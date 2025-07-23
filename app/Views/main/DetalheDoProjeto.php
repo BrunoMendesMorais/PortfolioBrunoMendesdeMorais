@@ -61,6 +61,37 @@
         <h1>PORTIFOLIO DE  BRUNO MENDES DE MORAIS</h1>
         <p>ESTE PROJETO FOI DESENVOLVIDO PARA FACILITAR A DIVULGAÇÃO DE MEUS PROJETOS</p>
     </section>
+
+    <section class="containerTecnologia">
+        <figure class="tecnologia">
+            <img src="img/tecnologias/css.svg" alt="">
+            <figcaption>CSS3</figcaption>
+        </figure>
+                <figure class="tecnologia">
+            <img src="img/tecnologias/css.svg" alt="">
+            <figcaption>CSS3</figcaption>
+        </figure>
+        </figure>
+                <figure class="tecnologia">
+            <img src="img/tecnologias/css.svg" alt="">
+            <figcaption>CSS3</figcaption>
+        </figure>
+        </figure>
+                <figure class="tecnologia">
+            <img src="img/tecnologias/css.svg" alt="">
+            <figcaption>CSS3</figcaption>
+        </figure>
+        </figure>
+                <figure class="tecnologia">
+            <img src="img/tecnologias/css.svg" alt="">
+            <figcaption>CSS3</figcaption>
+        </figure>
+        </figure>
+                <figure class="tecnologia">
+            <img src="img/tecnologias/css.svg" alt="">
+            <figcaption>CSS3</figcaption>
+        </figure>
+    </section>
 </main>
 <?= $this->endsection('conteudo') ?>
 
