@@ -3,12 +3,13 @@
 <?= $this->section('head') ?>
 
 <link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/projeto.css">
 <script src="js/main/Home.js" defer></script>
 <?= $this->endsection('head') ?>
 
 <?= $this->section('conteudo') ?>
 <main>
-     <section id="projetos">
+    <section id="projetos">
         <h3>PROJETOS</h3>
         <div>
             <form action="/" method="#" style="width: 100%;">
@@ -74,7 +75,7 @@
                 </section>
                 <img src="img/projetos/projeto1.png" alt="">
                 <h4>portifolio do bruno mendes de morais</h4>
-                <a href="">ver mais detalhes</a>
+                <a href="/DetalheDoProjeto">ver mais detalhes</a>
                 <div>+1</div>
             </article>
             <article>
@@ -128,11 +129,13 @@
                 </section>
                 <img src="img/projetos/projeto1.png" alt="">
                 <h4>portifolio do bruno mendes de morais</h4>
-                <a href="">ver mais detalhes</a>
+                <a href="/DetalheDoProjeto">ver mais detalhes</a>
                 <div>+1</div>
             </article>
+
+
         </section>
     </section>
 </main>
 
-<?=$this->endsection('conteudo')?>
+<?= $this->endsection('conteudo') ?>

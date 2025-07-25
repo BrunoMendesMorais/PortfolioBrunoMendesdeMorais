@@ -38,7 +38,7 @@
                     </svg>
                 </button>
             </form>
-            <a href="">VER TODOS</a>
+            <a href="/Projetos">VER TODOS</a>
         </div>
         <section id="projetosProgramacao">
             <article>
@@ -92,7 +92,7 @@
                 </section>
                 <img src="img/projetos/projeto1.png" alt="">
                 <h4>portifolio do bruno mendes de morais</h4>
-                <a href="">ver mais detalhes</a>
+                <a href="/DetalheDoProjeto">ver mais detalhes</a>
                 <div>+1</div>
             </article>
             <article>
@@ -146,7 +146,7 @@
                 </section>
                 <img src="img/projetos/projeto1.png" alt="">
                 <h4>portifolio do bruno mendes de morais</h4>
-                <a href="">ver mais detalhes</a>
+                <a href="/DetalheDoProjeto">ver mais detalhes</a>
                 <div>+1</div>
             </article>
         </section>

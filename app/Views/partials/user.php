@@ -37,9 +37,9 @@
         </div>
         <h1>Bruno Mendes de Morais</h1>
         <nav id="navegacaoHeader">
-            <a href="#">Sobre</a>
-            <a href="#">Projetos</a>
-            <a href="#">Contato</a>
+            <a href="/#sobreMim">Sobre</a>
+            <a href="/Projetos">Projetos</a>
+            <a href="/#contato">Contato</a>
         </nav>
         <div id="modo" class="esquerda">
             <div id="lua">
@@ -70,7 +70,7 @@
     <nav id="navegacaoLateral">
         <div>
             <section class="topcosNav">
-                <a href="">
+                <a href="/#sobreMim">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
                         <rect fill="none" />
                         <circle cx="128" cy="96" r="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
@@ -82,7 +82,7 @@
                 </a>
             </section>
             <section class="topcosNav">
-                <a href="">
+                <a href="/#projetos">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
                         <rect fill="none" />
                         <line x1="104" y1="104" x2="104" y2="208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
@@ -91,14 +91,14 @@
                     </svg>
                     <h2>PROJETOS</h2>
                     <ul>
-                        <li><a href="">Portifolio de bruno mendes de morais</a></li>
-                        <li><a href="">Projeto TCC mundo das cestas</a></li>
-                        <li><a href="">Portifolio de bruno mendes de morais</a></li>
+                        <li><a href="/#projetos">Portifolio de bruno mendes de morais</a></li>
+                        <li><a href="/#projetos">Portifolio de bruno mendes de morais</a></li>
+                        <li><a href="/#projetos">Portifolio de bruno mendes de morais</a></li>
                     </ul>
                 </a>
             </section>
             <section class="topcosNav">
-                <a href="">
+                <a href="/#contato">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
                         <rect fill="none" />
                         <circle cx="136" cy="112" r="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
@@ -111,7 +111,7 @@
                     <h2>CONTATO</h2>
                 </a>
                 <ul>
-                    <li><a href="">E-mail</a></li>
+                    <li><a href="/#contato">E-mail</a></li>
                 </ul>
             </section>
         </div>

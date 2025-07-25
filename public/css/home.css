@@ -225,6 +225,7 @@ main {
 /* ---------- sobreMim ---------- */
 #sobreMim {
     text-align: center;
+    scroll-margin-top: 50vh;
 }
 
 #sobreMim p {
