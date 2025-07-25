@@ -58,7 +58,7 @@
         <img src="img/projetos/projeto1.png" alt="">
     </section>
     <section id="rotuloProjeto">
-        <h1>PORTIFOLIO DE  BRUNO MENDES DE MORAIS</h1>
+        <h1>PORTIFOLIO DE BRUNO MENDES DE MORAIS</h1>
         <p>ESTE PROJETO FOI DESENVOLVIDO PARA FACILITAR A DIVULGAÇÃO DE MEUS PROJETOS</p>
     </section>
 
@@ -67,30 +67,43 @@
             <img src="img/tecnologias/css.svg" alt="">
             <figcaption>CSS3</figcaption>
         </figure>
-                <figure class="tecnologia">
+        <figure class="tecnologia">
             <img src="img/tecnologias/css.svg" alt="">
             <figcaption>CSS3</figcaption>
         </figure>
         </figure>
-                <figure class="tecnologia">
+        <figure class="tecnologia">
             <img src="img/tecnologias/css.svg" alt="">
             <figcaption>CSS3</figcaption>
         </figure>
         </figure>
-                <figure class="tecnologia">
+        <figure class="tecnologia">
             <img src="img/tecnologias/css.svg" alt="">
             <figcaption>CSS3</figcaption>
         </figure>
         </figure>
-                <figure class="tecnologia">
+        <figure class="tecnologia">
             <img src="img/tecnologias/css.svg" alt="">
             <figcaption>CSS3</figcaption>
         </figure>
         </figure>
-                <figure class="tecnologia">
+        <figure class="tecnologia">
             <img src="img/tecnologias/css.svg" alt="">
             <figcaption>CSS3</figcaption>
         </figure>
+    </section>
+
+    <section id="sobreProjeto">
+        <h1>SOBRE O PROJETO</h1>
+        <img src="img/projetos/responsividade/projeto1.png" alt="">
+        <pre>
+Este projeto consiste em um portfólio digital desenvolvido com a biblioteca React, com o objetivo de apresentar informações profissionais, habilidades técnicas, projetos realizados e formas de contato de maneira moderna e responsiva.
+O portfólio possui uma interface limpa e intuitiva, dividida em seções como "Sobre Mim", "Habilidades", "Projetos", "Experiência Profissional" e "Contato". A navegação entre as seções é feita de forma suave por meio de rotas e ancoragens, oferecendo uma boa experiência ao usuário.
+Para o estilo visual, foram utilizadas bibliotecas como Tailwind CSS (ou Styled Components, dependendo do caso), garantindo
+um design responsivo e adaptável a diferentes tamanhos de tela. Animações leves foram aplicadas com bibliotecas como Framer Motion, tornando a navegação mais dinâmica.
+Além disso, o portfólio é totalmente personalizável, com fácil manutenção e possibilidade de expansão para incluir um blog, área de downloads ou integração com APIs externas (como GitHub ou LinkedIn).
+O projeto demonstra domínio das boas práticas de desenvolvimento com React, organização de componentes reutilizáveis, uso de hooks (como useState e useEffect) e estrutura modular.
+</pre>
     </section>
 </main>
 <?= $this->endsection('conteudo') ?>
