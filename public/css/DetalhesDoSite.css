@@ -186,7 +186,8 @@ main {
 }
 
 #sobreProjeto img {
-    max-width: 80%;;
+    max-width: 80%;
+    ;
 }
 
 #sobreProjeto pre {
@@ -209,13 +210,12 @@ main {
 }
 
 /* ---------- videos ---------- */
-
-#videos{
+#videos {
     text-align: center;
     padding: 1%;
 }
 
-#videos h1{
+#videos h1 {
     font-weight: normal;
     margin-bottom: 0.5;
 }
@@ -230,11 +230,54 @@ main {
 
 /* --- tema --- */
 
-.claro #videos{
+.claro #videos {
     background-color: var(--cor-terciaria-claro);
-    color: var(--cor-texto2-claro);     
+    color: var(--cor-texto2-claro);
 }
-.escuro #videos{
+
+.escuro #videos {
     background-color: var(--cor-terciaria-escuro);
-     color: var(--cor-texto-escuro);
+    color: var(--cor-texto-escuro);
+}
+
+/* ---------- imagens ---------- */
+
+#imagens h1 {
+    text-align: center;
+    font-weight: normal;
+    margin: 2%;
+}
+
+#imagens div {
+    width: 1800px;
+    max-width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+#imagens div img {
+    max-width: 95%;
+    margin: auto;
+    margin-top: 1%;
+}
+
+/* --- tema --- */
+
+.claro #imagens {
+    color: var(--cor-texto2-claro);
+}
+
+.escuro #imagens {
+    color: var(--cor-texto-escuro);
+}
+
+/* --- responsividade --- */
+
+@media (max-width:1000px) {
+    #imagens div {
+        grid-template-columns: 1fr;
+
+    }
 }

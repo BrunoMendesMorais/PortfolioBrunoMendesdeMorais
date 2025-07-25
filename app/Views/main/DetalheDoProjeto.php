@@ -108,11 +108,23 @@ O projeto demonstra domínio das boas práticas de desenvolvimento com React, or
 
     <section id="videos">
         <h1>VIDEOS</h1>
-        <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+    <section id="imagens">
+        <h1>IMAGENS DO PROJETO</h1>
+        <div>
+            <img src="img/projetos/projeto1.png" alt="">
+            <img src="img/projetos/projeto1.png" alt="">
+            <img src="img/projetos/projeto1.png" alt="">
+            <img src="img/projetos/projeto1.png" alt="">
+            <img src="img/projetos/projeto1.png" alt="">
+        </div>
     </section>
 
 </main>
+
 <?= $this->endsection('conteudo') ?>
 
 <a href=""></a>
