@@ -105,6 +105,13 @@ Além disso, o portfólio é totalmente personalizável, com fácil manutenção
 O projeto demonstra domínio das boas práticas de desenvolvimento com React, organização de componentes reutilizáveis, uso de hooks (como useState e useEffect) e estrutura modular.
 </pre>
     </section>
+
+    <section id="videos">
+        <h1>VIDEOS</h1>
+        <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
 </main>
 <?= $this->endsection('conteudo') ?>
 
