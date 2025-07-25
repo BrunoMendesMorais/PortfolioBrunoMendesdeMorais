@@ -37,7 +37,7 @@
         </div>
         <h1>Bruno Mendes de Morais</h1>
         <nav id="navegacaoHeader">
-            <a href="/#sobreMim">Sobre</a>
+            <a href="/">Home</a>
             <a href="/Projetos">Projetos</a>
             <a href="/#contato">Contato</a>
         </nav>
@@ -70,13 +70,13 @@
     <nav id="navegacaoLateral">
         <div>
             <section class="topcosNav">
-                <a href="/#sobreMim">
+                <a href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
                         <rect fill="none" />
                         <circle cx="128" cy="96" r="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
                         <path d="M32,216c19.37-33.47,54.55-56,96-56s76.63,22.53,96,56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
                     </svg>
-                    <h2>SOBRE MIM</h2>
+                    <h2>HOME</h2>
                     <ul>
                     </ul>
                 </a>
