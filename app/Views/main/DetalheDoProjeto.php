@@ -75,34 +75,12 @@
     </section>
 
     <section class="containerTecnologia">
+        <?php foreach($tecnologia as $itens):?>
         <figure class="tecnologia">
-            <img src="/img/tecnologias/css.svg" alt="">
-            <figcaption>CSS3</figcaption>
+            <img src="/img/tecnologias/<?= $itens['img_tecnologia'] ?>" alt="<?= $itens['nome_tecnologia'] ?>">
+            <figcaption><?= $itens['nome_tecnologia'] ?></figcaption>
         </figure>
-        <figure class="tecnologia">
-            <img src="/img/tecnologias/css.svg" alt="">
-            <figcaption>CSS3</figcaption>
-        </figure>
-        </figure>
-        <figure class="tecnologia">
-            <img src="/img/tecnologias/css.svg" alt="">
-            <figcaption>CSS3</figcaption>
-        </figure>
-        </figure>
-        <figure class="tecnologia">
-            <img src="/img/tecnologias/css.svg" alt="">
-            <figcaption>CSS3</figcaption>
-        </figure>
-        </figure>
-        <figure class="tecnologia">
-            <img src="/img/tecnologias/css.svg" alt="">
-            <figcaption>CSS3</figcaption>
-        </figure>
-        </figure>
-        <figure class="tecnologia">
-            <img src="/img/tecnologias/css.svg" alt="">
-            <figcaption>CSS3</figcaption>
-        </figure>
+        <?php endforeach; ?>
     </section>
 
     <section id="sobreProjeto">
@@ -135,6 +113,5 @@
     <?php endif; ?>
 
 </main>
-
 
 <?= $this->endsection('conteudo') ?>

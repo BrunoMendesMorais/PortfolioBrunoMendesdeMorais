@@ -21,10 +21,15 @@ class Home extends BaseController
         foreach ($dados['projeto'] as $itens) {
             $filtro = $ProjetoTecnologiaModel->where('projeto_id', $itens['id_projeto'])->find();
             $b['tecnologias'] = array();
+            $contador = -4;
             foreach ($filtro as $item) {
-                $selecionado = $TecnologiaModel->where('id_tecnologia',$item['tecnologia_id'])->select('img_tecnologia')->first();
-                array_push($b['tecnologias'], $selecionado);
+                $contador += 1;
+                if ($contador <= 0) {
+                    $selecionado = $TecnologiaModel->where('id_tecnologia', $item['tecnologia_id'])->select('img_tecnologia')->first();
+                    array_push($b['tecnologias'], $selecionado);
+                }
             }
+            $b['quantidade'] = $contador;
             $unido = array_merge($itens, $b);
             array_push($a, $unido);
         }

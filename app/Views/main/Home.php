@@ -45,14 +45,16 @@
                 <article>
                     <section>
                         <?php foreach ($itens['tecnologias'] as $usado): ?>
-                            <img src="img/tecnologias/<?= $usado['img_tecnologia']?>" alt="">
+                            <img src="img/tecnologias/<?= $usado['img_tecnologia'] ?>" alt="">
                         <?php endforeach ?>
-                        
+
                     </section>
                     <img class="img" src="img/projetos/imagemCapa/<?= $itens['img_capa'] ?>" alt="">
                     <h4><?= $itens['titulo'] ?></h4>
                     <a href="/DetalheDoProjeto/<?= $itens['id_projeto'] ?>">ver mais detalhes</a>
-                    <div>+1</div>
+                    <?php if ($itens['quantidade'] > 0): ?>
+                        <div>+<?= $itens['quantidade'] ?></div>
+                    <?php endif ?>
                 </article>
             <?php endforeach ?>
         </section>
