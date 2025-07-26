@@ -544,8 +544,11 @@ main {
     padding: 9%;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    gap: 15%;
     grid-area: section;
+}
+
+#projetosProgramacao article section img{
+    margin-bottom: 85%;
 }
 
 #projetosProgramacao article .img {
