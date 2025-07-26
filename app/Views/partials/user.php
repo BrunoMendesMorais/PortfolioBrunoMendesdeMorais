@@ -22,8 +22,8 @@
     <meta name="twitter:description" content="Confira meus projetos e habilidades em desenvolvimento full stack.">
     <meta name="twitter:image" content="https://mendesmoraisbruno.com/imagem-de-capa.png">
 
-    <link rel="stylesheet" href="css/partials/user.css">
-    <script src="js/partials/user.js" defer></script>
+    <link rel="stylesheet" href="/css/partials/user.css">
+    <script src="/js/partials/user.js" defer></script>
 
     <?= $this->renderSection('head') ?>
 </head>

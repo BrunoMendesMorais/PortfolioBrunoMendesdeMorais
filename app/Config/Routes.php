@@ -7,4 +7,4 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/Projetos','ProjetoController::index');
-$routes->get('/DetalheDoProjeto','ProjetoController::DetalheDoProjeto');
+$routes->get('/DetalheDoProjeto/(:num)','ProjetoController::DetalheDoProjeto/$1');
