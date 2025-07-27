@@ -1,0 +1,39 @@
+#home {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+#home #formularioTexto {
+    display: grid;
+}
+
+#home #formularioTexto textarea {
+    background-color: #13132F;
+    width: 90%;
+    margin: 2% auto;
+    overflow: visible;
+    border: none;
+    outline: none;
+    color: #C5C5FF;
+    min-height: 200px;
+    font-size: 1em;
+    padding: 1%;
+    resize: none;
+}
+
+#home #formularioTexto #aprofundamento{
+    min-height: 400px;
+}
+
+#home #formularioTexto button{
+    width: 200px;
+    padding: 0.5%;
+    margin: auto;
+}
+
+#home #imagem img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100%;
+}

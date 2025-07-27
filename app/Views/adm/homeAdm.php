@@ -8,7 +8,26 @@
 
 <?= $this->section('conteudo') ?>
 <main>
-    <h1></h1>
+      <h1>Home</h1>
+    <section id="home">
+        <form id="formularioTexto" action="" method="post">
+            <textarea name="resumo" id="resumo"></textarea>
+            <textarea name="aprofundamento" id="aprofundamento"></textarea>
+            <button>Editar</button>
+        </form>
+        <form id="imagem" action="" method="post">
+            <img src="/img/imagensSite/bruno.jpg" alt="">
+        </form>
+    </section>
 </main>
+<script>
+    document.addEventListener("input", function(event) {
+        if (event.target.tagName.toLowerCase() !== "textarea") return;
+
+        event.target.style.height = "auto"; // Reset the height
+        event.target.style.height = (event.target.scrollHeight) + "px"; // Set it to scroll height
+    });
+</script>
+
 
 <?= $this->endsection(); ?>
