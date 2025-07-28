@@ -1,10 +1,12 @@
 #home {
     display: grid;
     grid-template-columns: 3fr 1fr;
+    grid-template-areas: 't i';
 }
 
 #home #formularioTexto {
     display: grid;
+    grid-area: t;
 }
 
 #home #formularioTexto textarea {
@@ -27,8 +29,18 @@
 
 #home #formularioTexto button{
     width: 200px;
-    padding: 0.5%;
+    padding: 1% 1%;
     margin: auto;
+}
+
+#home #imagem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 300px;
+    margin-top: 20px;
+    grid-area: i;
 }
 
 #home #imagem img{
@@ -36,4 +48,35 @@
     height: 200px;
     object-fit: cover;
     border-radius: 100%;
+}
+
+#home form button{
+    background-color: #C5C5FF;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+#imagem label{
+    background-color: #C5C5FF;
+    color: black;
+    width: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-radius: 2px;
+    font-size: 15px
+}
+
+@media (max-width: 870px){
+    #home{
+        grid-template-columns: 1fr;
+        grid-template-areas: 'i' 't';
+    }
 }

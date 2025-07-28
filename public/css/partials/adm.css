@@ -1,10 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
 }
-header{
+
+header {
     background-color: #010124;
     height: 100px;
     width: 100%;
@@ -15,19 +16,22 @@ header{
     color: #C5C5FF;
     font-size: 30px;
 }
-header a{
+
+header a {
     text-align: center;
 }
-body{
+
+body {
     background-color: #0E0E21;
     color: #C5C5FF;
     font-size: 20px;
 }
 
-h1{
+h1 {
     background-color: #C5C5FF;
     color: black;
     width: 100%;
     padding: 0.5%;
     text-align: center;
 }
+

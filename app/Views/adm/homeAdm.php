@@ -17,6 +17,8 @@
         </form>
         <form id="imagem" action="" method="post">
             <img src="/img/imagensSite/bruno.jpg" alt="">
+            <label for="img">selecionar arquivo</label>
+            <input type="file" name="img" id="img">
         </form>
     </section>
 </main>
