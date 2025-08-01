@@ -13,12 +13,12 @@
         <section id="presentacao">
             <h1>DESENVOLVEDOR</h1>
             <h2>FULL-STACK</h2>
-            <img src="/img/imagensSite/Bruno.jpg" alt="">
+            <img src="<?= $home['img_site'] ?>" alt="">
         </section>
 
         <section id="sobreMim">
             <h3>SOBRE MIM</h3>
-            <p>Sou um desenvolvedor de software focado na area da web tenho habilidades tanto no frontend quanto no backend</p>
+            <p><?= $home['mensagemCurta'] ?></p>
             <section id="maisSobreMim">
 
             </section>
@@ -94,7 +94,27 @@
             <p>www.linkedin.com/in/bruno-mendes-de-morais</p>
             <a href="">Ir para</a>
         </address>
-    </section>
+    </section><?= $home['mensagemCurta'] ?>
 </main>
+
+<script>
+    const verMaisSobreMim = document.getElementById("verMaisSobreMim");
+    const maisSobreMim = document.getElementById("maisSobreMim")
+
+    verMaisSobreMim.addEventListener("click", mostraMaisSobreMim);
+
+    function mostraMaisSobreMim() {
+        if (maisSobreMim.textContent.trim() == '') {
+            maisSobreMim.innerHTML = `
+    <?= $home['mensagem'] ?>
+    `
+            verMaisSobreMim.innerHTML = 'VER MENOS';
+        } else {
+            maisSobreMim.innerHTML = '';
+            verMaisSobreMim.innerHTML = 'VER MAIS';
+        }
+
+    }
+</script>
 
 <?= $this->endsection('conteudo') ?>

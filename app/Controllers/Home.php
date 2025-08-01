@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\ConteudosModel;
 use App\Models\ProjetoModel;
 use App\Models\ProjetoTecnologiaModel;
 use App\Models\TecnologiaModel;
@@ -16,6 +17,7 @@ class Home extends BaseController
         $TecnologiaModel = new TecnologiaModel();
         $ProjetoModel = new ProjetoModel();
         $ProjetoTecnologiaModel = new ProjetoTecnologiaModel();
+        $ContudosModel = new ConteudosModel();
         $dados["projeto"] = $ProjetoModel->select('titulo, img_capa, id_projeto',)->findAll();
 
         foreach ($dados['projeto'] as $itens) {
@@ -35,6 +37,7 @@ class Home extends BaseController
         }
         $dados["projeto"] = $a;
         $dados["tecnologia"] = $TecnologiaModel->findAll();
+        $dados['home'] = $ContudosModel->first();
         return view('main/Home', $dados);
     }
 }

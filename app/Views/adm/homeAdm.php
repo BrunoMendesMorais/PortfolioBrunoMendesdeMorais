@@ -105,6 +105,5 @@
         event.target.style.height = (event.target.scrollHeight) + "px";
     });
 </script>
-<?= var_dump($home)?>
 
 <?= $this->endsection(); ?>
