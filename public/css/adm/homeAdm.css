@@ -50,7 +50,7 @@
     border-radius: 100%;
 }
 
- form button {
+form button {
     background-color: #C5C5FF;
     border: none;
     outline: none;
@@ -94,8 +94,8 @@ input[type="file"] {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-    grid-template-rows: 10px;
-    gap: 100px;
+    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 20px;
     grid-area: t;
 }
 
@@ -117,7 +117,7 @@ input[type="file"] {
     object-fit: cover;
 }
 
-#tecnologia form input[type='text']{
+#tecnologia form input[type='text'] {
     font-size: 15px;
     padding: 5px;
     background-color: #1D1D43;
@@ -126,7 +126,7 @@ input[type="file"] {
     margin: 40px auto;
     width: 80%;
     display: block;
-}   
+}
 
 #tecnologia button {
     width: 80%;
@@ -139,5 +139,219 @@ input[type="file"] {
     #tecnologia {
         grid-template-columns: 1fr;
         grid-template-areas: 'f' 't';
+    }
+}
+
+
+#projetosProgramacao {
+    display: grid;
+    width: 1250px;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    margin-top: 2%;
+}
+
+#projetosProgramacao article * {
+    max-width: 100%;
+}
+
+#projetosProgramacao article {
+    width: 600px;
+    height: 350px;
+    margin: auto;
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: 8% 92%;
+    grid-template-rows: 80% 10% 10%;
+    padding: 1%;
+    border-radius: 10px;
+    grid-template-areas: 'section img' 'div h4' 'a a';
+    background-color: #13132F;
+}
+
+#projetosProgramacao article section {
+    padding: 9%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-area: section;
+}
+
+#projetosProgramacao article section img {
+    margin-bottom: 85%;
+}
+
+#projetosProgramacao article .img {
+    grid-area: img;
+}
+
+#projetosProgramacao article h4 {
+    grid-area: h4;
+    font-size: 1em;
+    font-weight: normal;
+    padding-left: 2%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#projetosProgramacao article a {
+    grid-area: a;
+    text-align: end;
+    text-decoration: underline;
+    color: currentColor;
+    font-size: 0.8em;
+    padding-right: 2%;
+}
+
+#projetosProgramacao article div {
+    grid-area: div;
+    border: 1px solid currentColor;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+#projetosProgramacao #novoProjeto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#projetosProgramacao #novoProjeto img{
+    width: 10%;
+}
+
+@media (max-width: 1280px) {
+
+    #projetosProgramacao {
+        width: 1000px;
+    }
+
+    #projetosProgramacao article {
+        width: 470px;
+        height: 300px;
+    }
+
+    #projetosProgramacao article section {
+        scale: 0.95;
+    }
+
+    #projetosProgramacao article h4 {
+        font-size: 1em;
+        padding-left: 2%;
+    }
+
+    #projetosProgramacao article a {
+        text-decoration: underline;
+        color: currentColor;
+        font-size: 0.8em;
+    }
+
+    #projetosProgramacao article div {
+        scale: 0.8;
+    }
+}
+
+@media (max-width: 1020px) {
+    #projetosProgramacao {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    #projetosProgramacao article {
+        width: 600px;
+        height: 350px;
+    }
+
+    #projetosProgramacao article section {
+        scale: 1;
+    }
+
+    #projetosProgramacao article div {
+        scale: 1;
+    }
+}
+
+@media (max-width: 630px) {
+
+    #projetosProgramacao article {
+        width: 470px;
+        height: 300px;
+    }
+
+    #projetosProgramacao article section {
+        scale: 0.95;
+    }
+
+    #projetosProgramacao article h4 {
+        padding-left: 2%;
+    }
+
+    #projetosProgramacao article div {
+        scale: 0.8;
+    }
+}
+
+@media (max-width: 630px) {
+
+    #projetosProgramacao article {
+        width: 470px;
+        height: 300px;
+    }
+
+    #projetosProgramacao article section {
+        scale: 0.95;
+    }
+
+    #projetosProgramacao article h4 {
+        padding-left: 2%;
+    }
+
+    #projetosProgramacao article div {
+        scale: 0.8;
+    }
+}
+
+@media (max-width: 500px) {
+
+    #projetosProgramacao article {
+        width: 95dvw;
+        height: 60dvw
+    }
+
+    #projetosProgramacao article section {
+        scale: 0.95;
+    }
+
+    #projetosProgramacao article h4 {
+        padding-left: 2%;
+    }
+
+    #projetosProgramacao article div {
+        width: 7dvw;
+        height: 7dvw;
+    }
+}
+
+@media (max-width: 350px) {
+
+    #projetosProgramacao article {
+        width: 95dvw;
+        height: 60dvw
+    }
+
+    #projetosProgramacao article section {
+        scale: 0.95;
+    }
+
+    #projetosProgramacao article h4 {
+        font-size: 4dvw;
+    }
+
+    #projetosProgramacao article div {
+        font-size: 4dvw;
     }
 }

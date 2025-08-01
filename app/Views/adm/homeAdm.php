@@ -46,9 +46,53 @@
         <form id="novaTec">
             <label for="imgTec"><img src="/img/imagensSite/plus.svg" alt=""></label>
             <inpt type="file" name="imgTec" id="imgTec">
-            <input type="text" name="nomeTec" id="nomeTec">
-            <button>Finalizar</button>
+                <input type="text" name="nomeTec" id="nomeTec">
+                <button>Finalizar</button>
         </form>
+
+    </section>
+
+    <h1>Projetos</h1>
+    <section id="projetosProgramacao">
+        <article id="novoProjeto">
+            <img src="/img/imagensSite/plus.svg" alt="">
+        </article>
+        <article>
+            <section>
+                <img src="/img/tecnologias/ts.svg" alt="">
+                <img src="/img/tecnologias/react.svg" alt="">
+                <img src="/img/tecnologias/html.svg" alt="">
+                <img src="/img/tecnologias/figma.svg" alt="">
+
+            </section>
+            <img class="img" src="/img/projetos/imagemCapa/projeto1.png" alt="">
+            <h4>portifolio do bruno mendes de morais</h4>
+            <a href="/DetalheDoProjeto/1">ver mais detalhes</a>
+        </article>
+        <article>
+            <section>
+                <img src="/img/tecnologias/ts.svg" alt="">
+                <img src="/img/tecnologias/react.svg" alt="">
+                <img src="/img/tecnologias/html.svg" alt="">
+                <img src="/img/tecnologias/figma.svg" alt="">
+
+            </section>
+            <img class="img" src="/img/projetos/imagemCapa/projeto1.png" alt="">
+            <h4>portifolio do bruno mendes de morais</h4>
+            <a href="/DetalheDoProjeto/1">ver mais detalhes</a>
+        </article>
+        <article>
+            <section>
+                <img src="/img/tecnologias/ts.svg" alt="">
+                <img src="/img/tecnologias/react.svg" alt="">
+                <img src="/img/tecnologias/html.svg" alt="">
+                <img src="/img/tecnologias/figma.svg" alt="">
+
+            </section>
+            <img class="img" src="/img/projetos/imagemCapa/projeto1.png" alt="">
+            <h4>portifolio do bruno mendes de morais</h4>
+            <a href="/DetalheDoProjeto/1">ver mais detalhes</a>
+        </article>
 
     </section>
 </main>
