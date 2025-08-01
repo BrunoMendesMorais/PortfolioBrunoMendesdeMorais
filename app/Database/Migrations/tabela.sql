@@ -29,7 +29,7 @@ CREATE TABLE imagem (
 );
 
 -- Tabela de destaques (caso você queira marcar certos projetos como destaques)
-CREATE TABLE destaque (
+CREATE TABLE infoPagina (
     id_destaque INT AUTO_INCREMENT PRIMARY KEY,
     projeto_id INT NOT NULL,
     
@@ -53,6 +53,17 @@ CREATE TABLE projeto_tecnologia (
     PRIMARY KEY (projeto_id, tecnologia_id),
     FOREIGN KEY (projeto_id) REFERENCES projeto(id) ON DELETE CASCADE,
     FOREIGN KEY (tecnologia_id) REFERENCES tecnologia(id) ON DELETE CASCADE
+);
+
+CREATE TABLE conteudos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    mensagemCurta VARCHAR(255) NOT NULL,
+    mensagem VARCHAR(100) NOT NULL UNIQUE,
+    img_site VARCHAR(100) NOT NULL
+);
+
+INSERT INTO conteudos (mensagemCurta, mensagem, img_site) VALUES (
+    'mensagemCurta', 'pagina-principal', '/img/imagensSite/Bruno.jpg'
 );
 
 INSERT INTO tecnologia (nome_tecnologia,img_tecnologia) VALUES  

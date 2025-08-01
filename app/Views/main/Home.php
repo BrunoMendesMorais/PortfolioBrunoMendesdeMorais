@@ -13,7 +13,7 @@
         <section id="presentacao">
             <h1>DESENVOLVEDOR</h1>
             <h2>FULL-STACK</h2>
-            <img src="img/imagensSite/Bruno.jpg" alt="">
+            <img src="/img/imagensSite/Bruno.jpg" alt="">
         </section>
 
         <section id="sobreMim">

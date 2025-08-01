@@ -11,12 +11,12 @@
     <h1>Home</h1>
     <section id="home">
         <form id="formularioTexto" action="" method="post">
-            <textarea name="resumo" id="resumo"></textarea>
-            <textarea name="aprofundamento" id="aprofundamento"></textarea>
+            <textarea name="resumo" id="resumo"><?= $home['mensagemCurta']?></textarea>
+            <textarea name="aprofundamento" id="aprofundamento"><?= $home['mensagem']?></textarea>
             <button>Editar</button>
         </form>
         <form id="imagem" action="" method="post">
-            <img src="/img/imagensSite/bruno.jpg" alt="">
+            <img src="<?= $home['img_site']?>" alt="">
             <label for="img">selecionar arquivo</label>
             <input type="file" name="img" id="img">
         </form>
@@ -105,6 +105,6 @@
         event.target.style.height = (event.target.scrollHeight) + "px";
     });
 </script>
-
+<?= var_dump($home)?>
 
 <?= $this->endsection(); ?>
