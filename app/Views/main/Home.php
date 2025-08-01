@@ -94,7 +94,7 @@
             <p>www.linkedin.com/in/bruno-mendes-de-morais</p>
             <a href="">Ir para</a>
         </address>
-    </section><?= $home['mensagemCurta'] ?>
+    </section>
 </main>
 
 <script>

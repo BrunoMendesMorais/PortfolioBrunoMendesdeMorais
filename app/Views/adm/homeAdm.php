@@ -11,12 +11,12 @@
     <h1>Home</h1>
     <section id="home">
         <form id="formularioTexto" action="" method="post">
-            <textarea name="resumo" id="resumo"><?= $home['mensagemCurta']?></textarea>
-            <textarea name="aprofundamento" id="aprofundamento"><?= $home['mensagem']?></textarea>
+            <textarea name="resumo" id="resumo"><?= $home['mensagemCurta'] ?></textarea>
+            <textarea name="aprofundamento" id="aprofundamento"><?= $home['mensagem'] ?></textarea>
             <button>Editar</button>
         </form>
         <form id="imagem" action="" method="post">
-            <img src="<?= $home['img_site']?>" alt="">
+            <img src="<?= $home['img_site'] ?>" alt="">
             <label for="img">selecionar arquivo</label>
             <input type="file" name="img" id="img">
         </form>
@@ -24,23 +24,9 @@
     <h1>Tecnologia</h1>
     <section id="tecnologia">
         <section id="tec">
-            <img src="/img/tecnologias/ts.svg" alt="">
-            <img src="/img/tecnologias/ts.svg" alt="">
-            <img src="/img/tecnologias/ts.svg" alt="">
-            <img src="/img/tecnologias/ts.svg" alt="">
-            <img src="/img/tecnologias/ts.svg" alt="">
-            <img src="/img/tecnologias/ts.svg" alt="">
-            <img src="/img/tecnologias/ts.svg" alt="">
-            <img src="/img/tecnologias/ts.svg" alt="">
-            <img src="/img/tecnologias/ts.svg" alt="">
-            <img src="/img/tecnologias/ts.svg" alt="">
-            <img src="/img/tecnologias/ts.svg" alt="">
-            <img src="/img/tecnologias/ts.svg" alt="">
-            <img src="/img/tecnologias/ts.svg" alt="">
-            <img src="/img/tecnologias/ts.svg" alt="">
-            <img src="/img/tecnologias/ts.svg" alt="">
-            <img src="/img/tecnologias/ts.svg" alt="">
-            <img src="/img/tecnologias/ts.svg" alt="">
+            <?php foreach ($tecnologia as $itens): ?>
+                <img src="/img/tecnologias/<?= $itens['img_tecnologia'] ?>" width="60px" alt="">
+            <?php endforeach ?>
         </section>
 
         <form id="novaTec">
@@ -54,47 +40,24 @@
 
     <h1>Projetos</h1>
     <section id="projetosProgramacao">
-        <article id="novoProjeto">
-            <img src="/img/imagensSite/plus.svg" alt="">
-        </article>
-        <article>
-            <section>
-                <img src="/img/tecnologias/ts.svg" alt="">
-                <img src="/img/tecnologias/react.svg" alt="">
-                <img src="/img/tecnologias/html.svg" alt="">
-                <img src="/img/tecnologias/figma.svg" alt="">
+        <section id="projetosProgramacao">
+            <?php foreach ($projeto as $itens): ?>
+                <article>
+                    <section>
+                        <?php foreach ($itens['tecnologias'] as $usado): ?>
+                            <img src="/img/tecnologias/<?= $usado['img_tecnologia'] ?>" alt="">
+                        <?php endforeach ?>
 
-            </section>
-            <img class="img" src="/img/projetos/imagemCapa/projeto1.png" alt="">
-            <h4>portifolio do bruno mendes de morais</h4>
-            <a href="/DetalheDoProjeto/1">ver mais detalhes</a>
-        </article>
-        <article>
-            <section>
-                <img src="/img/tecnologias/ts.svg" alt="">
-                <img src="/img/tecnologias/react.svg" alt="">
-                <img src="/img/tecnologias/html.svg" alt="">
-                <img src="/img/tecnologias/figma.svg" alt="">
-
-            </section>
-            <img class="img" src="/img/projetos/imagemCapa/projeto1.png" alt="">
-            <h4>portifolio do bruno mendes de morais</h4>
-            <a href="/DetalheDoProjeto/1">ver mais detalhes</a>
-        </article>
-        <article>
-            <section>
-                <img src="/img/tecnologias/ts.svg" alt="">
-                <img src="/img/tecnologias/react.svg" alt="">
-                <img src="/img/tecnologias/html.svg" alt="">
-                <img src="/img/tecnologias/figma.svg" alt="">
-
-            </section>
-            <img class="img" src="/img/projetos/imagemCapa/projeto1.png" alt="">
-            <h4>portifolio do bruno mendes de morais</h4>
-            <a href="/DetalheDoProjeto/1">ver mais detalhes</a>
-        </article>
-
-    </section>
+                    </section>
+                    <img class="img" src="/img/projetos/imagemCapa/<?= $itens['img_capa'] ?>" alt="">
+                    <h4><?= $itens['titulo'] ?></h4>
+                    <a href="/DetalheDoProjeto/<?= $itens['id_projeto'] ?>">ver mais detalhes</a>
+                    <?php if ($itens['quantidade'] > 0): ?>
+                        <div>+<?= $itens['quantidade'] ?></div>
+                    <?php endif ?>
+                </article>
+            <?php endforeach ?>
+        </section>
 </main>
 
 <script>
