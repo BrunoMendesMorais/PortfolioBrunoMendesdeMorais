@@ -42,4 +42,49 @@ class AdmController extends BaseController
         $dados['home'] = $ContudosModel->first();
         return view('adm/homeAdm', $dados);
     }
+    public function editTxtHome()
+    {
+        $ContudosModel = new ConteudosModel();
+        $resumo = $this->request->getPost('resumo');
+        $aprofundamento = $this->request->getPost('aprofundamento');
+
+        $dados = [
+            'mensagemCurta' => $resumo,
+            'mensagem' => $aprofundamento,
+        ];
+
+        $ContudosModel->update(1, $dados);
+        return redirect()->to('adm/home');
+    }
+    public function editImgHome()
+    {
+        $ContudosModel = new ConteudosModel();
+
+        $file = $this->request->getFile('img');
+
+        $conteudo = $ContudosModel->find(1);
+        $novoNome = $file->getRandomName();
+
+        if ($file->isValid() && ! $file->hasMoved()) {
+            $novoNome = $file->getRandomName();
+            $caminho = 'img/imagensSite/perfil/';
+            $caminhoCompleto = FCPATH . $caminho;
+        }
+        $data = [
+            'img_site' => ('/img/imagensSite/perfil/' . $novoNome),
+        ];
+
+        $file->move($caminhoCompleto, $novoNome);
+
+        if (!empty($conteudo['img_site'])) {
+            $imagemAntiga = FCPATH . $conteudo['img_site'];
+
+            if (file_exists($imagemAntiga)) {
+                unlink($imagemAntiga);
+            }
+        }
+
+        $ContudosModel->update(1, $data);
+        return redirect()->to('/adm/home');
+    }
 }

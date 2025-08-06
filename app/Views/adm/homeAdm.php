@@ -10,15 +10,16 @@
 <main>
     <h1>Home</h1>
     <section id="home">
-        <form id="formularioTexto" action="" method="post">
+        <form id="formularioTexto" action="edit/homeTxt" method="post">
             <textarea name="resumo" id="resumo"><?= $home['mensagemCurta'] ?></textarea>
             <textarea name="aprofundamento" id="aprofundamento"><?= $home['mensagem'] ?></textarea>
             <button>Editar</button>
         </form>
-        <form id="imagem" action="" method="post">
+        <form id="imagem" action="/adm/edit/homeImg" method="post" enctype="multipart/form-data">
             <img src="<?= $home['img_site'] ?>" alt="">
             <label for="img">selecionar arquivo</label>
             <input type="file" name="img" id="img">
+            <button>aaaaaaaaaaaaaa</button>
         </form>
     </section>
     <h1>Tecnologia</h1>
