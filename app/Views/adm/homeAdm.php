@@ -16,7 +16,7 @@
             <button>Editar</button>
         </form>
         <form id="imagem" action="/adm/edit/homeImg" method="post" enctype="multipart/form-data">
-            <img src="<?= $home['img_site'] ?>" alt="">
+            <img id="perfil" src="<?= $home['img_site'] ?>" alt="">
             <label for="img">selecionar arquivo</label>
             <input type="file" name="img" id="img">
             <button>aaaaaaaaaaaaaa</button>
@@ -31,10 +31,10 @@
         </section>
 
         <form id="novaTec" method="post" action="/adm/edit/addTecnologia" enctype="multipart/form-data">
-            <label for="imgTec"><img src="/img/imagensSite/plus.svg" alt=""></label>
+            <label for="imgTec"><img id="fotoTec" src="/img/imagensSite/plus.svg" alt=""></label>
             <input type="file" name="imgTec" id="imgTec">
-                <input type="text" name="nomeTec" id="nomeTec">
-                <button>Finalizar</button>
+            <input type="text" name="nomeTec" id="nomeTec">
+            <button>Finalizar</button>
         </form>
 
     </section>
@@ -67,6 +67,41 @@
 
         event.target.style.height = "auto";
         event.target.style.height = (event.target.scrollHeight) + "px";
+    });
+
+    const input = document.getElementById('imgTec');
+    const imgPreview = document.getElementById('fotoTec');
+
+    input.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+
+            reader.addEventListener('load', function() {
+                imgPreview.src = reader.result;
+                imgPreview.style.display = 'block';
+            });
+
+            reader.readAsDataURL(file);
+        }
+    });
+
+    
+    const input2 = document.getElementById('img');
+    const imgPreview2 = document.getElementById('perfil');
+
+    input2.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+
+            reader.addEventListener('load', function() {
+                imgPreview2.src = reader.result;
+                imgPreview2.style.display = 'block';
+            });
+
+            reader.readAsDataURL(file);
+        }
     });
 </script>
 
