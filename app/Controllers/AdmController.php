@@ -87,4 +87,31 @@ class AdmController extends BaseController
         $ContudosModel->update(1, $data);
         return redirect()->to('/adm/home');
     }
+
+    public function addTecnologia()
+    {
+        $TecnologiaModel = new TecnologiaModel();
+
+        $file = $this->request->getFile('imgTec');
+
+        if ($file->isValid() && ! $file->hasMoved()) {
+            $novoNome = $file->getRandomName();
+            $caminho = 'img/tecnologias/';
+            $caminhoCompleto = FCPATH . $caminho;
+        }
+
+        $nomeTec = $this->request->getPost('nomeTec');
+
+        $data = [
+            'img_tecnologia' => ($novoNome),
+            'nome_tecnologia' => $nomeTec,
+        ];
+
+        $file->move($caminhoCompleto, $novoNome);
+
+
+
+        $TecnologiaModel->save($data);
+        return redirect()->to('/adm/home');
+    }
 }

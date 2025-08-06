@@ -30,9 +30,9 @@
             <?php endforeach ?>
         </section>
 
-        <form id="novaTec">
+        <form id="novaTec" method="post" action="/adm/edit/addTecnologia" enctype="multipart/form-data">
             <label for="imgTec"><img src="/img/imagensSite/plus.svg" alt=""></label>
-            <inpt type="file" name="imgTec" id="imgTec">
+            <input type="file" name="imgTec" id="imgTec">
                 <input type="text" name="nomeTec" id="nomeTec">
                 <button>Finalizar</button>
         </form>

@@ -11,5 +11,5 @@ $routes->get('/DetalheDoProjeto/(:num)','ProjetoController::DetalheDoProjeto/$1'
 
 $routes->get('/adm/home','AdmController::home');
 $routes->post('/adm/edit/homeTxt','AdmController::editTxtHome');
-$routes->post('/adm/edit/homeImg','AdmController::editImgHome');
+$routes->post('/adm/edit/addTecnologia','AdmController::addTecnologia');
 
