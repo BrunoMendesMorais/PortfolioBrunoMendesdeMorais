@@ -19,14 +19,16 @@
             <img id="perfil" src="<?= $home['img_site'] ?>" alt="">
             <label for="img">selecionar arquivo</label>
             <input type="file" name="img" id="img">
-            <button>aaaaaaaaaaaaaa</button>
+            <button>Trocar Foto</button>
         </form>
     </section>
     <h1>Tecnologia</h1>
     <section id="tecnologia">
         <section id="tec">
             <?php foreach ($tecnologia as $itens): ?>
-                <img src="/img/tecnologias/<?= $itens['img_tecnologia'] ?>" width="60px" alt="">
+                <a href="/adm/tecnologia/<?= $itens['id_tecnologia'] ?>">
+                    <img src="/img/tecnologias/<?= $itens['img_tecnologia'] ?>" width="60px" alt="">
+                </a>
             <?php endforeach ?>
         </section>
 
@@ -86,7 +88,7 @@
         }
     });
 
-    
+
     const input2 = document.getElementById('img');
     const imgPreview2 = document.getElementById('perfil');
 

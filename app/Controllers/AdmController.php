@@ -114,4 +114,37 @@ class AdmController extends BaseController
         $TecnologiaModel->save($data);
         return redirect()->to('/adm/home');
     }
+
+    public function detalheTecnologia($id)
+    {
+        $TecnologiaModel = new TecnologiaModel();
+        $dados = array();
+
+        $dados['tecnologia'] = $TecnologiaModel->find($id);
+
+        return view('adm/detalheTecnologia', $dados);
+    }
+
+    public function excluirTecnologia($id)
+    {
+
+        $tecnologiaModel = new TecnologiaModel();
+
+        $tecnologia = $tecnologiaModel->find($id);
+
+        if ($tecnologia) {
+            // Caminho do arquivo da imagem
+            $imagemCaminho = FCPATH . $tecnologia['img_tecnologia']; // Ex: 'uploads/imagens/arquivo.jpg'
+
+            // Exclui a imagem se o arquivo existir
+            if (is_file($imagemCaminho)) {
+                unlink($imagemCaminho);
+            }
+
+            // Exclui o item do banco de dados
+            $tecnologiaModel->delete($id);
+        }
+
+        return redirect()->to('adm/home');
+    }
 }
