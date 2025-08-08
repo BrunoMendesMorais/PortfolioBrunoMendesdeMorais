@@ -142,6 +142,21 @@ input[type="file"] {
     }
 }
 
+#projetosProgramacao > #novoProjeto{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-areas: 'img';
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+#novoProjeto img{
+    grid-area: img;
+    width: 50px;
+    text-align: center;
+}
+
 
 #projetosProgramacao {
     display: grid;
@@ -151,11 +166,11 @@ input[type="file"] {
     margin-top: 2%;
 }
 
-#projetosProgramacao article * {
+#projetosProgramacao .projet * {
     max-width: 100%;
 }
 
-#projetosProgramacao article {
+#projetosProgramacao .projet {
     width: 600px;
     height: 350px;
     margin: auto;
@@ -167,24 +182,26 @@ input[type="file"] {
     border-radius: 10px;
     grid-template-areas: 'section img' 'div h4' 'a a';
     background-color: #13132F;
+    text-decoration: none;
+    color: #C5C5FF;
 }
 
-#projetosProgramacao article section {
+#projetosProgramacao .projet section {
     padding: 9%;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-area: section;
 }
 
-#projetosProgramacao article section img {
+#projetosProgramacao .projet section img {
     margin-bottom: 85%;
 }
 
-#projetosProgramacao article .img {
+#projetosProgramacao .projet .img {
     grid-area: img;
 }
 
-#projetosProgramacao article h4 {
+#projetosProgramacao .projet h4 {
     grid-area: h4;
     font-size: 1em;
     font-weight: normal;
@@ -194,16 +211,7 @@ input[type="file"] {
     white-space: nowrap;
 }
 
-#projetosProgramacao article a {
-    grid-area: a;
-    text-align: end;
-    text-decoration: underline;
-    color: currentColor;
-    font-size: 0.8em;
-    padding-right: 2%;
-}
-
-#projetosProgramacao article div {
+#projetosProgramacao .projet div {
     grid-area: div;
     border: 1px solid currentColor;
     border-radius: 100%;
@@ -215,12 +223,13 @@ input[type="file"] {
     font-size: 0.9rem;
 }
 
-#projetosProgramacao #novoProjeto{
+#projetosProgramacao #novoProjeto {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#projetosProgramacao #novoProjeto img{
+
+#projetosProgramacao #novoProjeto img {
     width: 10%;
 }
 
@@ -230,27 +239,27 @@ input[type="file"] {
         width: 1000px;
     }
 
-    #projetosProgramacao article {
+    #projetosProgramacao .projet {
         width: 470px;
         height: 300px;
     }
 
-    #projetosProgramacao article section {
+    #projetosProgramacao .projet section {
         scale: 0.95;
     }
 
-    #projetosProgramacao article h4 {
+    #projetosProgramacao .projet h4 {
         font-size: 1em;
         padding-left: 2%;
     }
 
-    #projetosProgramacao article a {
+    #projetosProgramacao .projet a {
         text-decoration: underline;
         color: currentColor;
         font-size: 0.8em;
     }
 
-    #projetosProgramacao article div {
+    #projetosProgramacao .projet div {
         scale: 0.8;
     }
 }
@@ -261,76 +270,76 @@ input[type="file"] {
         width: 100%;
     }
 
-    #projetosProgramacao article {
+    #projetosProgramacao .projet {
         width: 600px;
         height: 350px;
     }
 
-    #projetosProgramacao article section {
+    #projetosProgramacao .projet section {
         scale: 1;
     }
 
-    #projetosProgramacao article div {
+    #projetosProgramacao .projet div {
         scale: 1;
     }
 }
 
 @media (max-width: 630px) {
 
-    #projetosProgramacao article {
+    #projetosProgramacao .projet {
         width: 470px;
         height: 300px;
     }
 
-    #projetosProgramacao article section {
+    #projetosProgramacao .projet section {
         scale: 0.95;
     }
 
-    #projetosProgramacao article h4 {
+    #projetosProgramacao .projet h4 {
         padding-left: 2%;
     }
 
-    #projetosProgramacao article div {
+    #projetosProgramacao .projet div {
         scale: 0.8;
     }
 }
 
 @media (max-width: 630px) {
 
-    #projetosProgramacao article {
+    #projetosProgramacao .projet {
         width: 470px;
         height: 300px;
     }
 
-    #projetosProgramacao article section {
+    #projetosProgramacao .projet section {
         scale: 0.95;
     }
 
-    #projetosProgramacao article h4 {
+    #projetosProgramacao .projet h4 {
         padding-left: 2%;
     }
 
-    #projetosProgramacao article div {
+    #projetosProgramacao .projet div {
         scale: 0.8;
     }
 }
 
 @media (max-width: 500px) {
 
-    #projetosProgramacao article {
+    #projetosProgramacao .projet {
         width: 95dvw;
         height: 60dvw
     }
 
-    #projetosProgramacao article section {
+    #projetosProgramacao .projet section {
         scale: 0.95;
     }
 
-    #projetosProgramacao article h4 {
+    #projetosProgramacao .projet h4 {
         padding-left: 2%;
     }
 
-    #projetosProgramacao article div {
+    #projetosProgramacao .projet div {
         width: 7dvw;
         height: 7dvw;
     }
@@ -338,20 +347,20 @@ input[type="file"] {
 
 @media (max-width: 350px) {
 
-    #projetosProgramacao article {
+    #projetosProgramacao .projet {
         width: 95dvw;
         height: 60dvw
     }
 
-    #projetosProgramacao article section {
+    #projetosProgramacao .projet section {
         scale: 0.95;
     }
 
-    #projetosProgramacao article h4 {
+    #projetosProgramacao .projet h4 {
         font-size: 4dvw;
     }
 
-    #projetosProgramacao article div {
+    #projetosProgramacao .projet div {
         font-size: 4dvw;
     }
 }

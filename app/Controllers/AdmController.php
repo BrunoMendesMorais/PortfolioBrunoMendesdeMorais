@@ -147,4 +147,8 @@ class AdmController extends BaseController
 
         return redirect()->to('adm/home');
     }
+
+    public function criarProjeto(){
+        return view('adm/criarProjeto');
+    }
 }

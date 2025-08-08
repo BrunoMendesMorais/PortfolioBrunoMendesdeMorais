@@ -44,8 +44,11 @@
     <h1>Projetos</h1>
     <section id="projetosProgramacao">
         <section id="projetosProgramacao">
+            <a href="/adm/criar/projeto" id="novoProjeto" class="projet">
+                <img src="/img/imagensSite/plus.svg" alt="">
+            </a>
             <?php foreach ($projeto as $itens): ?>
-                <article>
+                <a href="/adm/editar/projeto/<?=$itens['id_projeto']?>" class="projet">
                     <section>
                         <?php foreach ($itens['tecnologias'] as $usado): ?>
                             <img src="/img/tecnologias/<?= $usado['img_tecnologia'] ?>" alt="">
@@ -54,11 +57,10 @@
                     </section>
                     <img class="img" src="/img/projetos/imagemCapa/<?= $itens['img_capa'] ?>" alt="">
                     <h4><?= $itens['titulo'] ?></h4>
-                    <a href="/DetalheDoProjeto/<?= $itens['id_projeto'] ?>">ver mais detalhes</a>
                     <?php if ($itens['quantidade'] > 0): ?>
                         <div>+<?= $itens['quantidade'] ?></div>
                     <?php endif ?>
-                </article>
+                </a>
             <?php endforeach ?>
         </section>
 </main>
