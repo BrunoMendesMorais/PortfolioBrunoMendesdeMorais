@@ -9,10 +9,10 @@
 <?= $this->section('conteudo') ?>
 
 <main>
-    <form action="">
+    <form id="formulario" action="">
 
         <label for="img_capa">
-            <img src="/img/imagensSite/plus.svg" alt="">
+            <img class="add" src="/img/imagensSite/plus.svg" alt="">
         </label>
         <input type="file" name="img_capa" id="img_capa">
 
@@ -26,7 +26,7 @@
         <textarea name="descricao_projeto" id="descricao_projeto"></textarea>
 
         <label for="img_destaque">
-            <img src="/img/imagensSite/plus.svg" alt="">
+            <img class="add" src="/img/imagensSite/plus.svg" alt="">
         </label>
         <input type="file" name="img_destaque" id="img_destaque">
 
@@ -47,26 +47,39 @@
 
     </form>
 
-    <label class="checkbox-option">
-        <input type="checkbox" name="opcoes[]" value="opcao1">
-        Opção 1
-    </label>
-    <label class="checkbox-option">
-        <input type="checkbox" name="opcoes[]" value="opcao2">
-        Opção 2
-    </label>
-    <label class="checkbox-option">
-        <input type="checkbox" name="opcoes[]" value="opcao3">
-        Opção 3
-    </label>
-    <label class="checkbox-option">
-        <input type="checkbox" name="opcoes[]" value="opcao4">
-        Opção 4
-    </label>
-    <label class="checkbox-option">
-        <input type="checkbox" name="opcoes[]" value="opcao5">
-        Opção 5
-    </label>
+    <div>
+
+        <label class="checkbox-option">
+            <input type="checkbox" name="opcoes[]" value="opcao1">
+            <img src="/img/tecnologias/react.svg" alt="">
+        </label>
+        <label class="checkbox-option">
+            <input type="checkbox" name="opcoes[]" value="opcao2">
+            <img src="/img/tecnologias/react.svg" alt="">
+        </label>
+        <label class="checkbox-option">
+            <input type="checkbox" name="opcoes[]" value="opcao3">
+            <img src="/img/tecnologias/react.svg" alt="">
+        </label>
+        <label class="checkbox-option">
+            <input type="checkbox" name="opcoes[]" value="opcao4">
+            <img src="/img/tecnologias/react.svg" alt="">
+        </label>
+        <label class="checkbox-option">
+            <input type="checkbox" name="opcoes[]" value="opcao5">
+            <img src="/img/tecnologias/react.svg" alt="">
+        </label>
+
+    </div>
+
+    <section id="upload-area">
+        <label class="label-upload">
+            <img class="add" src="/img/imagensSite/plus.svg" alt="">
+            <input type="file" accept="image/*" onchange="adicionarImagem(this)">
+        </label>
+    </section>
+
+    <section id="lista-imagens"></section>
 
 
     <script>
@@ -76,7 +89,52 @@
             event.target.style.height = "auto";
             event.target.style.height = (event.target.scrollHeight) + "px";
         });
+
+        function adicionarImagem(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    // Cria container da imagem
+                    const container = document.createElement("div");
+                    container.classList.add("imagem-item");
+
+                    // Cria imagem
+                    const img = document.createElement("img");
+                    img.src = e.target.result;
+                    img.classList.add("preview");
+
+                    // Cria botão de remover
+                    const btnRemover = document.createElement("button");
+                    btnRemover.innerHTML = "×";
+                    btnRemover.classList.add("btn-remover");
+                    btnRemover.onclick = function() {
+                        container.remove();
+                        hiddenInput.remove();
+                    };
+
+                    // Cria input oculto para enviar no formulário
+                    const hiddenInput = document.createElement("input");
+                    hiddenInput.type = "hidden";
+                    hiddenInput.name = "imagens_base64[]";
+                    hiddenInput.value = e.target.result;
+
+                    // Monta o item
+                    container.appendChild(img);
+                    container.appendChild(btnRemover);
+                    document.getElementById("lista-imagens").appendChild(container);
+                    document.getElementById("formulario").appendChild(hiddenInput);
+
+                    // Limpa o campo de upload e recria para novo upload
+                    input.value = "";
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
     </script>
 </main>
+
+
 
 <?= $this->endsection(); ?>
