@@ -148,7 +148,61 @@ class AdmController extends BaseController
         return redirect()->to('adm/home');
     }
 
-    public function criarProjeto(){
-        return view('adm/criarProjeto');
+    public function criarProjeto()
+    {
+
+        $dados = array();
+
+        $TecnologiaModel = new TecnologiaModel();
+        $dados['tecnologia'] = $TecnologiaModel->findAll();
+
+        return view('adm/criarProjeto', $dados);
+    }
+
+    public function finalizarProjeto()
+    {
+        $projetosModel = new ProjetoModel();
+
+        $ProjetoTecnologiaModel = new ProjetoTecnologiaModel();
+
+        $dados = [];
+        $dados['titulo']            = $this->request->getPost('titulo');
+        $dados['sub_titulo']        = $this->request->getPost('sub_titulo');
+        $dados['descricao_projeto'] = $this->request->getPost('descricao_projeto');
+        $dados['link_demo']         = $this->request->getPost('link_demo');
+        $dados['link_figma']        = $this->request->getPost('link_figma');
+        $dados['link_github']       = $this->request->getPost('link_github');
+        $dados['link_video_e']      = $this->request->getPost('link_video_e');
+        $dados['link_video_c']      = $this->request->getPost('link_video_c');
+
+        $uploadPathDestaque = FCPATH . 'img/projetos/destaque/';
+        $uploadPathCapa     = FCPATH . 'img/projetos/imagemCapa/';
+
+        if (!is_dir($uploadPathDestaque)) {
+            mkdir($uploadPathDestaque, 0777, true);
+        }
+        if (!is_dir($uploadPathCapa)) {
+            mkdir($uploadPathCapa, 0777, true);
+        }
+
+        $fileDestaque = $this->request->getFile('img_destaque');
+        if ($fileDestaque && $fileDestaque->isValid() && !$fileDestaque->hasMoved()) {
+            $nomeDestaque = $fileDestaque->getRandomName();
+            $fileDestaque->move($uploadPathDestaque, $nomeDestaque);
+            $dados['img_destaque'] = $nomeDestaque;
+        } else {
+            $dados['img_destaque'] = null; // ou valor padrão
+        }
+
+        $fileCapa = $this->request->getFile('img_capa');
+        if ($fileCapa && $fileCapa->isValid() && !$fileCapa->hasMoved()) {
+            $nomeCapa = $fileCapa->getRandomName();
+            $fileCapa->move($uploadPathCapa, $nomeCapa);
+            $dados['img_capa'] = $nomeCapa;
+        } else {
+            $dados['img_capa'] = null;
+        }
+
+        $projetosModel->insert($dados);
     }
 }

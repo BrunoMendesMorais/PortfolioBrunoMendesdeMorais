@@ -9,7 +9,7 @@
 <?= $this->section('conteudo') ?>
 
 <main>
-    <form id="formulario" action="">
+    <form id="formulario" method="post" action="/adm/criar/projeto"  enctype="multipart/form-data">
 
         <label for="img_capa">
             <img id="capa" class="inputImg add" src="/img/imagensSite/plus.svg" alt="">
@@ -17,7 +17,7 @@
         <input type="file" name="img_capa" id="img_capa">
 
         <label for="titulo">titulo</label>
-        <input type="text" name="img_capa" id="img_capa">
+        <input type="text" name="titulo" id="titulo">
 
         <label for="sub_titulo">sub-titulo</label>
         <input type="text" name="sub_titulo" id="sub_titulo">
@@ -49,27 +49,12 @@
 
         <div>
 
-            <label class="checkbox-option">
-                <input type="checkbox" name="opcoes[]" value="opcao1">
-                <img src="/img/tecnologias/react.svg" alt="">
-            </label>
-            <label class="checkbox-option">
-                <input type="checkbox" name="opcoes[]" value="opcao2">
-                <img src="/img/tecnologias/react.svg" alt="">
-            </label>
-            <label class="checkbox-option">
-                <input type="checkbox" name="opcoes[]" value="opcao3">
-                <img src="/img/tecnologias/react.svg" alt="">
-            </label>
-            <label class="checkbox-option">
-                <input type="checkbox" name="opcoes[]" value="opcao4">
-                <img src="/img/tecnologias/react.svg" alt="">
-            </label>
-            <label class="checkbox-option">
-                <input type="checkbox" name="opcoes[]" value="opcao5">
-                <img src="/img/tecnologias/react.svg" alt="">
-            </label>
-
+            <?php foreach ($tecnologia as $itens): ?>
+                <label class="checkbox-option">
+                    <input type="checkbox" name="opcoes[]" value="<?= $itens['id_tecnologia'] ?>">
+                    <img src="/img/tecnologias/<?= $itens['img_tecnologia'] ?>" width="60px" alt="">
+                </label>
+            <?php endforeach ?>
         </div>
 
         <section id="upload-area">
@@ -130,6 +115,7 @@
 
     function adicionarImagem(input) {
         if (input.files && input.files[0]) {
+            const file = input.files[0];
             const reader = new FileReader();
 
             reader.onload = function(e) {
@@ -137,9 +123,9 @@
                 const container = document.createElement("div");
                 container.classList.add("imagem-item");
 
-                // Cria imagem
+                // Cria imagem de pré-visualização
                 const img = document.createElement("img");
-                img.src = e.target.result;
+                img.src = e.target.result; // Apenas para pré-visualizar
                 img.classList.add("preview");
 
                 // Cria botão de remover
@@ -148,28 +134,30 @@
                 btnRemover.classList.add("btn-remover");
                 btnRemover.onclick = function() {
                     container.remove();
-                    hiddenInput.remove();
+                    input.remove(); // Remove o input file real
                 };
 
-                // Cria input oculto para enviar no formulário
-                const hiddenInput = document.createElement("input");
-                hiddenInput.type = "hidden";
-                hiddenInput.name = "imagens_base64[]";
-                hiddenInput.value = e.target.result;
-
-                // Monta o item
+                // Adiciona imagem e botão ao container
                 container.appendChild(img);
                 container.appendChild(btnRemover);
                 document.getElementById("lista-imagens").appendChild(container);
-                document.getElementById("formulario").appendChild(hiddenInput);
-
-                // Limpa o campo de upload e recria para novo upload
-                input.value = "";
             };
 
-            reader.readAsDataURL(input.files[0]);
+            // Lê a imagem para mostrar na tela, mas não converte para envio
+            reader.readAsDataURL(file);
+
+            // Mantém o input original no formulário para envio normal
+            // Cria um clone para permitir novos uploads sem perder o anterior
+            const novoInput = input.cloneNode();
+            novoInput.value = "";
+            novoInput.onchange = function() {
+                adicionarImagem(this);
+            };
+            input.parentNode.insertBefore(novoInput, input);
+            input.style.display = "none"; // Esconde o input antigo mas mantém no   
         }
     }
+    
 </script>
 
 
