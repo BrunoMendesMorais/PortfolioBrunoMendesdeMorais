@@ -60,7 +60,7 @@
         <section id="upload-area">
             <label class="label-upload">
                 <img class="inputImg add" src="/img/imagensSite/plus.svg" alt="">
-                <input type="file" accept="image/*" onchange="adicionarImagem(this)">
+                <input type="file" name="img[]" accept="image/*" onchange="adicionarImagem(this)">
             </label>
         </section>
 

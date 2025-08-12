@@ -65,8 +65,7 @@ class ProjetoController extends BaseController
             $img = $ImagemModel->where('id_imagem', $itens['imagem_id'])->first();
             array_push($c, $img);
         }
-
-
+        
         $dados['tecnologia'] = $e;  
         $dados['imagens'] = $c;
         $dados['projeto'] = $ProjetoModel->find($id);

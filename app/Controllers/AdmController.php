@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ConteudosModel;
+use App\Models\ImagemModel;
+use App\Models\ImagemProjeto;
 use App\Models\ProjetoModel;
 use App\Models\ProjetoTecnologiaModel;
 use App\Models\TecnologiaModel;
@@ -162,13 +164,15 @@ class AdmController extends BaseController
     public function finalizarProjeto()
     {
         $projetosModel = new ProjetoModel();
+        $imagensModel = new ImagemModel();
+        $projetoImagem = new ImagemProjeto();
 
         $ProjetoTecnologiaModel = new ProjetoTecnologiaModel();
 
         $dados = [];
-        $dados['titulo']            = $this->request->getPost('titulo');
-        $dados['sub_titulo']        = $this->request->getPost('sub_titulo');
-        $dados['descricao_projeto'] = $this->request->getPost('descricao_projeto');
+        $dados['titulo']            = $this->request->getPost('titulo') ?? 'semTitulo';
+        $dados['sub_titulo']        = $this->request->getPost('sub_titulo') ?? 'semDescrição';
+        $dados['descricao_projeto'] = $this->request->getPost('descricao_projeto') ?? 'semDetalhes';
         $dados['link_demo']         = $this->request->getPost('link_demo');
         $dados['link_figma']        = $this->request->getPost('link_figma');
         $dados['link_github']       = $this->request->getPost('link_github');
@@ -191,7 +195,7 @@ class AdmController extends BaseController
             $fileDestaque->move($uploadPathDestaque, $nomeDestaque);
             $dados['img_destaque'] = $nomeDestaque;
         } else {
-            $dados['img_destaque'] = null; // ou valor padrão
+            $dados['img_destaque'] = 'semImagem'; // ou valor padrão
         }
 
         $fileCapa = $this->request->getFile('img_capa');
@@ -200,9 +204,60 @@ class AdmController extends BaseController
             $fileCapa->move($uploadPathCapa, $nomeCapa);
             $dados['img_capa'] = $nomeCapa;
         } else {
-            $dados['img_capa'] = null;
+            $dados['img_capa'] = 'SemImagem';
         }
 
         $projetosModel->insert($dados);
+
+        $id = $projetosModel->insertID();
+
+        $tecnologias = $this->request->getPost('opcoes') ?? [];
+
+        foreach ($tecnologias as $itens) {
+
+            $tecnologia = [
+                'projeto_id' => $id,
+                'tecnologia_id' => $itens,
+            ];
+
+            $ProjetoTecnologiaModel->insert($tecnologia);
+        }
+
+        $imagens = $this->request->getFiles('img');
+
+        foreach ($imagens['img'] as $imagem) {
+
+            if ($imagem && $imagem->isValid() && !$imagem->hasMoved()) {
+
+                $nomeImg = $imagem->getRandomName();
+                $imagem->move('img/projetos/imagens/', $nomeImg);
+                $i['img_projeto'] = $nomeImg;
+                $i['alt_text'] = 'foto do projeto';
+
+                $imagensModel->insert($i);
+
+                $idImg = $imagensModel->insertID();
+
+                $ir = [
+                    'imagem_id' => $idImg,
+                    'projeto_id' => $id,
+                ];
+
+                $projetoImagem->insert($ir);
+            }
+        }
+    }
+
+    public function editarProjeto()
+    {
+
+        $dados = array();
+
+        $TecnologiaModel = new TecnologiaModel();
+
+        $dados['tecnologia'] = $TecnologiaModel->findAll();
+
+
+        return view('adm/editarProjeto', $dados);
     }
 }

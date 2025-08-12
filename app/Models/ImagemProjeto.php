@@ -12,7 +12,7 @@ class ImagemProjeto extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['projeto_id','tecnologia_id'];
+    protected $allowedFields    = ['projeto_id','imagem_id'];
 
     protected bool $allowEmptyInserts = false;
 

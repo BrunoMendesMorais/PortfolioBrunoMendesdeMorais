@@ -9,6 +9,8 @@
 <?= $this->section('conteudo') ?>
 
 <main>
+
+
     <section id="topo">
 
         <div>
@@ -75,11 +77,11 @@
     </section>
 
     <section class="containerTecnologia">
-        <?php foreach($tecnologia as $itens):?>
-        <figure class="tecnologia">
-            <img src="/img/tecnologias/<?= $itens['img_tecnologia'] ?>" alt="<?= $itens['nome_tecnologia'] ?>">
-            <figcaption><?= $itens['nome_tecnologia'] ?></figcaption>
-        </figure>
+        <?php foreach ($tecnologia as $itens): ?>
+            <figure class="tecnologia">
+                <img src="/img/tecnologias/<?= $itens['img_tecnologia'] ?>" alt="<?= $itens['nome_tecnologia'] ?>">
+                <figcaption><?= $itens['nome_tecnologia'] ?></figcaption>
+            </figure>
         <?php endforeach; ?>
     </section>
 
@@ -100,16 +102,16 @@
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/<?= $projeto['link_video_c'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <?php endif; ?>
         </section>
-        <?php if (!empty($imagens)): ?>
-            <section id="imagens">
-                <h1>IMAGENS DO PROJETO</h1>
-                <div>
-                    <?php foreach ($imagens as $itens): ?>
-                        <img src="/img/projetos/imagens/<?= $itens['img_projeto'] ?>" alt="<?= $itens['alt_text'] ?>">
-                    <?php endforeach ?>
-                </div>
-            </section>
-        <?php endif; ?>
+    <?php endif; ?>
+    <?php if (!empty($imagens)): ?>
+        <section id="imagens">
+            <h1>IMAGENS DO PROJETO</h1>
+            <div>
+                <?php foreach ($imagens as $itens): ?>
+                    <img src="/img/projetos/imagens/<?= $itens['img_projeto'] ?>" alt="<?= $itens['alt_text'] ?>">
+                <?php endforeach ?>
+            </div>
+        </section>
     <?php endif; ?>
 
 </main>
