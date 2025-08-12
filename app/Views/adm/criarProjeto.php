@@ -12,7 +12,7 @@
     <form id="formulario" action="">
 
         <label for="img_capa">
-            <img class="add" src="/img/imagensSite/plus.svg" alt="">
+            <img id="capa" class="inputImg add" src="/img/imagensSite/plus.svg" alt="">
         </label>
         <input type="file" name="img_capa" id="img_capa">
 
@@ -26,7 +26,7 @@
         <textarea name="descricao_projeto" id="descricao_projeto"></textarea>
 
         <label for="img_destaque">
-            <img class="add" src="/img/imagensSite/plus.svg" alt="">
+            <img id="destaque" class="inputImg add" src="/img/imagensSite/plus.svg" alt="">
         </label>
         <input type="file" name="img_destaque" id="img_destaque">
 
@@ -45,95 +45,132 @@
         <label for="link_video_c">link video completo</label>
         <input type="url" name="link_video_c" id="link_video_c">
 
+
+
+        <div>
+
+            <label class="checkbox-option">
+                <input type="checkbox" name="opcoes[]" value="opcao1">
+                <img src="/img/tecnologias/react.svg" alt="">
+            </label>
+            <label class="checkbox-option">
+                <input type="checkbox" name="opcoes[]" value="opcao2">
+                <img src="/img/tecnologias/react.svg" alt="">
+            </label>
+            <label class="checkbox-option">
+                <input type="checkbox" name="opcoes[]" value="opcao3">
+                <img src="/img/tecnologias/react.svg" alt="">
+            </label>
+            <label class="checkbox-option">
+                <input type="checkbox" name="opcoes[]" value="opcao4">
+                <img src="/img/tecnologias/react.svg" alt="">
+            </label>
+            <label class="checkbox-option">
+                <input type="checkbox" name="opcoes[]" value="opcao5">
+                <img src="/img/tecnologias/react.svg" alt="">
+            </label>
+
+        </div>
+
+        <section id="upload-area">
+            <label class="label-upload">
+                <img class="inputImg add" src="/img/imagensSite/plus.svg" alt="">
+                <input type="file" accept="image/*" onchange="adicionarImagem(this)">
+            </label>
+        </section>
+
+        <section id="lista-imagens"></section>
+
+        <button class="botao">finalizar</button>
+
     </form>
+</main>
 
-    <div>
+<script>
+    document.addEventListener("input", function(event) {
+        if (event.target.tagName.toLowerCase() !== "textarea") return;
 
-        <label class="checkbox-option">
-            <input type="checkbox" name="opcoes[]" value="opcao1">
-            <img src="/img/tecnologias/react.svg" alt="">
-        </label>
-        <label class="checkbox-option">
-            <input type="checkbox" name="opcoes[]" value="opcao2">
-            <img src="/img/tecnologias/react.svg" alt="">
-        </label>
-        <label class="checkbox-option">
-            <input type="checkbox" name="opcoes[]" value="opcao3">
-            <img src="/img/tecnologias/react.svg" alt="">
-        </label>
-        <label class="checkbox-option">
-            <input type="checkbox" name="opcoes[]" value="opcao4">
-            <img src="/img/tecnologias/react.svg" alt="">
-        </label>
-        <label class="checkbox-option">
-            <input type="checkbox" name="opcoes[]" value="opcao5">
-            <img src="/img/tecnologias/react.svg" alt="">
-        </label>
+        event.target.style.height = "auto";
+        event.target.style.height = (event.target.scrollHeight) + "px";
+    });
 
-    </div>
+    const input = document.getElementById('img_capa');
+    const imgPreview = document.getElementById('capa');
 
-    <section id="upload-area">
-        <label class="label-upload">
-            <img class="add" src="/img/imagensSite/plus.svg" alt="">
-            <input type="file" accept="image/*" onchange="adicionarImagem(this)">
-        </label>
-    </section>
+    input.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
 
-    <section id="lista-imagens"></section>
+            reader.addEventListener('load', function() {
+                imgPreview.src = reader.result;
+            });
 
+            reader.readAsDataURL(file);
+            imgPreview.classList.remove("add");
+        }
+    });
 
-    <script>
-        document.addEventListener("input", function(event) {
-            if (event.target.tagName.toLowerCase() !== "textarea") return;
+    const input2 = document.getElementById('img_destaque');
+    const imgPreview2 = document.getElementById('destaque');
 
-            event.target.style.height = "auto";
-            event.target.style.height = (event.target.scrollHeight) + "px";
-        });
+    input2.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
 
-        function adicionarImagem(input) {
-            if (input.files && input.files[0]) {
-                const reader = new FileReader();
+            reader.addEventListener('load', function() {
+                imgPreview2.src = reader.result;
+            });
 
-                reader.onload = function(e) {
-                    // Cria container da imagem
-                    const container = document.createElement("div");
-                    container.classList.add("imagem-item");
+            reader.readAsDataURL(file);
+            imgPreview2.classList.remove("add");
+        }
+    });
 
-                    // Cria imagem
-                    const img = document.createElement("img");
-                    img.src = e.target.result;
-                    img.classList.add("preview");
+    function adicionarImagem(input) {
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
 
-                    // Cria botão de remover
-                    const btnRemover = document.createElement("button");
-                    btnRemover.innerHTML = "×";
-                    btnRemover.classList.add("btn-remover");
-                    btnRemover.onclick = function() {
-                        container.remove();
-                        hiddenInput.remove();
-                    };
+            reader.onload = function(e) {
+                // Cria container da imagem
+                const container = document.createElement("div");
+                container.classList.add("imagem-item");
 
-                    // Cria input oculto para enviar no formulário
-                    const hiddenInput = document.createElement("input");
-                    hiddenInput.type = "hidden";
-                    hiddenInput.name = "imagens_base64[]";
-                    hiddenInput.value = e.target.result;
+                // Cria imagem
+                const img = document.createElement("img");
+                img.src = e.target.result;
+                img.classList.add("preview");
 
-                    // Monta o item
-                    container.appendChild(img);
-                    container.appendChild(btnRemover);
-                    document.getElementById("lista-imagens").appendChild(container);
-                    document.getElementById("formulario").appendChild(hiddenInput);
-
-                    // Limpa o campo de upload e recria para novo upload
-                    input.value = "";
+                // Cria botão de remover
+                const btnRemover = document.createElement("button");
+                btnRemover.innerHTML = "×";
+                btnRemover.classList.add("btn-remover");
+                btnRemover.onclick = function() {
+                    container.remove();
+                    hiddenInput.remove();
                 };
 
-                reader.readAsDataURL(input.files[0]);
-            }
+                // Cria input oculto para enviar no formulário
+                const hiddenInput = document.createElement("input");
+                hiddenInput.type = "hidden";
+                hiddenInput.name = "imagens_base64[]";
+                hiddenInput.value = e.target.result;
+
+                // Monta o item
+                container.appendChild(img);
+                container.appendChild(btnRemover);
+                document.getElementById("lista-imagens").appendChild(container);
+                document.getElementById("formulario").appendChild(hiddenInput);
+
+                // Limpa o campo de upload e recria para novo upload
+                input.value = "";
+            };
+
+            reader.readAsDataURL(input.files[0]);
         }
-    </script>
-</main>
+    }
+</script>
 
 
 
