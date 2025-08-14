@@ -248,16 +248,130 @@ class AdmController extends BaseController
         }
     }
 
-    public function editarProjeto()
+    public function editarProjeto($id)
     {
 
         $dados = array();
 
         $TecnologiaModel = new TecnologiaModel();
+        $projetosModel = new ProjetoModel();
+        $ProjetoTecnologiaModel = new ProjetoTecnologiaModel();
 
+        $ImagemModel = new ImagemModel();
+        $ImagemProjetoModel = new ImagemProjeto();
+
+        $a = $ImagemProjetoModel->where('projeto_id', $id)->findAll();
+        $c = array();
+
+        foreach ($a as $itens) {
+            $img = $ImagemModel->where('id_imagem', $itens['imagem_id'])->first();
+            array_push($c, $img);
+        }
+
+
+        $dados['imagens'] = $c;
         $dados['tecnologia'] = $TecnologiaModel->findAll();
-
+        $dados['projeto'] = $projetosModel->find($id);
+        $dados['tecnologiaSelecionadas'] = $ProjetoTecnologiaModel->where('projeto_id', $id)->findAll();
 
         return view('adm/editarProjeto', $dados);
+    }
+
+    public function finalizarEdicaoProjeto($id)
+    {
+        $projetosModel = new ProjetoModel();
+        $imagensModel = new ImagemModel();
+        $projetoImagem = new ImagemProjeto();
+
+        $ProjetoTecnologiaModel = new ProjetoTecnologiaModel();
+
+        $dados = [];
+        $dados['titulo']            = $this->request->getPost('titulo') ?? 'semTitulo';
+        $dados['sub_titulo']        = $this->request->getPost('sub_titulo') ?? 'semDescrição';
+        $dados['descricao_projeto'] = $this->request->getPost('descricao_projeto') ?? 'semDetalhes';
+        $dados['link_demo']         = $this->request->getPost('link_demo');
+        $dados['link_figma']        = $this->request->getPost('link_figma');
+        $dados['link_github']       = $this->request->getPost('link_github');
+        $dados['link_video_e']      = $this->request->getPost('link_video_e');
+        $dados['link_video_c']      = $this->request->getPost('link_video_c');
+
+        $uploadPathDestaque = FCPATH . 'img/projetos/destaque/';
+        $uploadPathCapa     = FCPATH . 'img/projetos/imagemCapa/';
+
+        if (!is_dir($uploadPathDestaque)) {
+            mkdir($uploadPathDestaque, 0777, true);
+        }
+        if (!is_dir($uploadPathCapa)) {
+            mkdir($uploadPathCapa, 0777, true);
+        }
+
+        $fileDestaque = $this->request->getFile('img_destaque');
+        if ($fileDestaque && $fileDestaque->isValid() && !$fileDestaque->hasMoved()) {
+            $nomeDestaque = $fileDestaque->getRandomName();
+            $fileDestaque->move($uploadPathDestaque, $nomeDestaque);
+            $dados['img_destaque'] = $nomeDestaque;
+        }
+
+        $fileCapa = $this->request->getFile('img_capa');
+        if ($fileCapa && $fileCapa->isValid() && !$fileCapa->hasMoved()) {
+            $nomeCapa = $fileCapa->getRandomName();
+            $fileCapa->move($uploadPathCapa, $nomeCapa);
+            $dados['img_capa'] = $nomeCapa;
+        }
+
+        $projetosModel->update($id, $dados);
+
+        $ProjetoTecnologiaModel->where('projeto_id', $id)->delete();
+
+        $tecnologias = $this->request->getPost('opcoes') ?? [];
+
+        foreach ($tecnologias as $itens) {
+
+            $tecnologia = [
+                'projeto_id' => $id,
+                'tecnologia_id' => $itens,
+            ];
+
+            $ProjetoTecnologiaModel->insert($tecnologia);
+        }
+
+        $imagens = $this->request->getFiles('img');
+
+        foreach ($imagens['img'] as $imagem) {
+
+            if ($imagem && $imagem->isValid() && !$imagem->hasMoved()) {
+
+                $nomeImg = $imagem->getRandomName();
+                $imagem->move('img/projetos/imagens/', $nomeImg);
+                $i['img_projeto'] = $nomeImg;
+                $i['alt_text'] = 'foto do projeto';
+
+                $imagensModel->insert($i);
+
+                $idImg = $imagensModel->insertID();
+
+                $ir = [
+                    'imagem_id' => $idImg,
+                    'projeto_id' => $id,
+                ];
+
+                $projetoImagem->insert($ir);
+            }
+        }
+        $imagensDelete = $this->request->getPost('excluir');
+
+        if (isset($imagensDelete)) {
+            foreach ($imagensDelete as $itens) {
+                $i = $imagensModel->find($itens);
+                
+                var_dump($i['img_projeto']);
+                $imagensModel->delete($itens);
+
+                $caminhoImagem = FCPATH . 'img/projetos/imagens/' . $i['img_projeto'];
+
+                unlink($caminhoImagem);
+                $projetoImagem->where('imagem_id', $itens)->delete();
+            }
+        }
     }
 }
