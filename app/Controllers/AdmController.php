@@ -283,6 +283,8 @@ class AdmController extends BaseController
         $imagensModel = new ImagemModel();
         $projetoImagem = new ImagemProjeto();
 
+        $projeto = $projetosModel->find($id);
+
         $ProjetoTecnologiaModel = new ProjetoTecnologiaModel();
 
         $dados = [];
@@ -310,6 +312,7 @@ class AdmController extends BaseController
             $nomeDestaque = $fileDestaque->getRandomName();
             $fileDestaque->move($uploadPathDestaque, $nomeDestaque);
             $dados['img_destaque'] = $nomeDestaque;
+            unlink($uploadPathDestaque . $projeto['img_destaque']);
         }
 
         $fileCapa = $this->request->getFile('img_capa');
@@ -317,6 +320,7 @@ class AdmController extends BaseController
             $nomeCapa = $fileCapa->getRandomName();
             $fileCapa->move($uploadPathCapa, $nomeCapa);
             $dados['img_capa'] = $nomeCapa;
+            unlink($uploadPathCapa . $projeto['img_capa']);
         }
 
         $projetosModel->update($id, $dados);
@@ -363,7 +367,7 @@ class AdmController extends BaseController
         if (isset($imagensDelete)) {
             foreach ($imagensDelete as $itens) {
                 $i = $imagensModel->find($itens);
-                
+
                 var_dump($i['img_projeto']);
                 $imagensModel->delete($itens);
 
