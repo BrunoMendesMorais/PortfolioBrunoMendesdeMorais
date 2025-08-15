@@ -10,6 +10,7 @@ use App\Models\ProjetoModel;
 use App\Models\ProjetoTecnologiaModel;
 use App\Models\TecnologiaModel;
 use CodeIgniter\HTTP\ResponseInterface;
+use Dom\Document;
 
 class AdmController extends BaseController
 {
@@ -381,8 +382,46 @@ class AdmController extends BaseController
         return redirect()->to('adm/home');
     }
 
-    public function adm(){
-        return view('adm/loginADM');
+    public function excluirProjeto($id)
+    {
+
+        $projetosModel = new ProjetoModel();
+        $projetoImagemModel = new ImagemProjeto();
+        $projetoTecnologiaModel = new ProjetoTecnologiaModel();
+
+        $imagemModel = new ImagemModel();
+
+        $imagensProjeto = $projetosModel->find($id);
+
+        $nomeImgCapa = $imagensProjeto['img_capa'];
+        $nomeImgDestaque = $imagensProjeto['img_destaque'];
+
+        $urlImgCapa = FCPATH . '/img/projetos/imagemCapa/' . $nomeImgCapa;
+        $urlImgDestaque = FCPATH . 'img/projetos/destaque/' . $nomeImgDestaque;
+
+
+        $imagensExtras = $projetoImagemModel->where('projeto_id', $id)->findAll();
+
+        foreach ($imagensExtras as $itens) {
+            $nomeImg = $imagemModel->find($itens['imagem_id']);
+            $urlImgExtra = FCPATH . 'img/projetos/imagens/' . $nomeImg['img_projeto'];
+            $imagemModel->delete($itens['imagem_id']);
+            unlink($urlImgExtra);
+        }
+
+
+        unlink($urlImgCapa);
+        unlink($urlImgDestaque);
+
+        $projetoImagemModel->where('projeto_id', $id)->delete();
+        $projetosModel->delete($id);
+        $projetoTecnologiaModel->where('projeto_id', $id)->delete();
+
+        return redirect()->to('adm/home');
     }
 
+    public function adm()
+    {
+        return view('adm/loginADM');
+    }
 }
