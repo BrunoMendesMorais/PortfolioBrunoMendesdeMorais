@@ -15,6 +15,13 @@ CREATE TABLE projeto (
     descricao_projeto TEXT NOT NULL
 );
 
+CREATE TABLE adm (
+    id_adm INT AUTO_INCREMENT PRIMARY KEY,
+    login_adm VARCHAR(255) NOT NULL UNIQUE,
+    toke_adm VARCHAR(255) NOT NULL UNIQUE,
+    senha_hash VARCHAR(255) NOT NULL
+);
+
 CREATE TABLE tecnologia (
     id_tecnologia INT AUTO_INCREMENT PRIMARY KEY,
     nome_tecnologia VARCHAR(100) NOT NULL,

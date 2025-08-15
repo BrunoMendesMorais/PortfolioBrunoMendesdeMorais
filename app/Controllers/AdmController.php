@@ -246,6 +246,7 @@ class AdmController extends BaseController
                 $projetoImagem->insert($ir);
             }
         }
+        return redirect()->to('adm/home');
     }
 
     public function editarProjeto($id)
@@ -377,5 +378,11 @@ class AdmController extends BaseController
                 $projetoImagem->where('imagem_id', $itens)->delete();
             }
         }
+        return redirect()->to('adm/home');
     }
+
+    public function adm(){
+        return view('adm/loginADM');
+    }
+
 }

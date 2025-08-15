@@ -80,7 +80,7 @@
         <!-- Input de upload inicial -->
         <input type="file" name="imagens_novas[]" onchange="adicionarImagem(this)">
 
-        <button class="botao">finalizar</button>
+        <button class="botao">finalizar</button> <a href="/adm/excluir/projeto/<?= $projeto['id_projeto'] ?>">Excluir</a>
 
     </form>
 </main>
