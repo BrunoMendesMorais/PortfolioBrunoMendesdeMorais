@@ -27,3 +27,5 @@ $routes->get('adm/editar/projeto/(:num)','AdmController::editarProjeto/$1');
 $routes->post('adm/editar/projeto/(:num)','AdmController::finalizarEdicaoProjeto/$1');
 
 $routes->get('adm','AdmController::adm');
+
+$routes->post('/admLogin','AdmController::login');

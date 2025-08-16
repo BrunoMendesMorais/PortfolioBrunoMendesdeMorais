@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\AdmModel;
 use App\Models\ConteudosModel;
 use App\Models\ImagemModel;
 use App\Models\ImagemProjeto;
@@ -423,5 +424,31 @@ class AdmController extends BaseController
     public function adm()
     {
         return view('adm/loginADM');
+    }
+
+    public function login()
+    {
+        $session = session();
+
+        $login = $this->request->getPost('login');
+        $senha = $this->request->getPost('senha');
+
+        $userModel = new AdmModel();
+        $usuario = $userModel->where('login_adm', $login)->first();
+
+        if ($usuario) {
+            if (password_verify($senha, $usuario['senha_hash'])) {
+                
+                $token = bin2hex(random_bytes(32));
+
+                $userModel->update($usuario['id_adm'], ['toke_adm' => $token]);
+
+                $session->set([
+                    'token'   => $token,
+                ]);
+                return redirect()->to('adm/home');
+            }
+        }
+        return redirect()->to('adm');
     }
 }
