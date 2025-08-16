@@ -438,7 +438,7 @@ class AdmController extends BaseController
 
         if ($usuario) {
             if (password_verify($senha, $usuario['senha_hash'])) {
-                
+
                 $token = bin2hex(random_bytes(32));
 
                 $userModel->update($usuario['id_adm'], ['toke_adm' => $token]);
@@ -450,5 +450,10 @@ class AdmController extends BaseController
             }
         }
         return redirect()->to('adm');
+    }
+
+    public function d(){
+        $session = session();
+        $session->destroy();
     }
 }

@@ -6,26 +6,29 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
-$routes->get('/Projetos','ProjetoController::index');
-$routes->get('/DetalheDoProjeto/(:num)','ProjetoController::DetalheDoProjeto/$1');
+$routes->get('/Projetos', 'ProjetoController::index');
+$routes->get('/DetalheDoProjeto/(:num)', 'ProjetoController::DetalheDoProjeto/$1');
 
+$routes->group("adm",  ['filter' => 'Adm'], function ($routes) {
 
+    $routes->get('home', 'AdmController::home');
 
-$routes->get('/adm/home','AdmController::home');
-$routes->post('/adm/edit/homeTxt','AdmController::editTxtHome');
-$routes->post('/adm/edit/addTecnologia','AdmController::addTecnologia');
+    $routes->post('edit/homeTxt', 'AdmController::editTxtHome');
+    $routes->post('edit/addTecnologia', 'AdmController::addTecnologia');
 
-$routes->get('adm/tecnologia/(:num)','AdmController::detalheTecnologia/$1');
-$routes->get('/adm/exluir/tecnologia/(:num)','AdmController::excluirTecnologia/$1');
+    $routes->get('tecnologia/(:num)', 'AdmController::detalheTecnologia/$1');
+    $routes->get('exluir/tecnologia/(:num)', 'AdmController::excluirTecnologia/$1');
 
-$routes->get('adm/excluir/projeto/(:num)','AdmController::excluirProjeto/$1');
+    $routes->get('excluir/projeto/(:num)', 'AdmController::excluirProjeto/$1');
 
-$routes->get('adm/criar/projeto','AdmController::criarProjeto');
-$routes->post('adm/criar/projeto','AdmController::finalizarProjeto');
+    $routes->get('criar/projeto', 'AdmController::criarProjeto');
+    $routes->post('criar/projeto', 'AdmController::finalizarProjeto');
 
-$routes->get('adm/editar/projeto/(:num)','AdmController::editarProjeto/$1');
-$routes->post('adm/editar/projeto/(:num)','AdmController::finalizarEdicaoProjeto/$1');
+    $routes->get('editar/projeto/(:num)', 'AdmController::editarProjeto/$1');
+    $routes->post('editar/projeto/(:num)', 'AdmController::finalizarEdicaoProjeto/$1');
+});
 
-$routes->get('adm','AdmController::adm');
+$routes->get('adm', 'AdmController::adm');
+$routes->get('d', 'AdmController::d');
 
-$routes->post('/admLogin','AdmController::login');
+$routes->post('/admLogin', 'AdmController::login');
