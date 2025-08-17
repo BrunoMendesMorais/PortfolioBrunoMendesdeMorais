@@ -69,6 +69,10 @@ class ProjetoController extends BaseController
         $dados['tecnologia'] = $e;  
         $dados['imagens'] = $c;
         $dados['projeto'] = $ProjetoModel->find($id);
+
+        if(!$dados['projeto']){
+                    return redirect()->to('/');
+        }
         return view("main/DetalheDoProjeto", $dados);
     }
 }

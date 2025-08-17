@@ -407,7 +407,7 @@ main {
 }
 
 /* ---------- barra de pesquisa ---------- */
-#projetos{
+#projetos {
     margin-top: 3%;
 }
 
@@ -547,12 +547,15 @@ main {
     grid-area: section;
 }
 
-#projetosProgramacao article section img{
+#projetosProgramacao article section img {
     margin-bottom: 85%;
 }
 
 #projetosProgramacao article .img {
     grid-area: img;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
 }
 
 #projetosProgramacao article h4 {
@@ -628,12 +631,14 @@ main {
         scale: 0.8;
     }
 }
+
 @media (max-width: 1020px) {
     #projetosProgramacao {
         grid-template-columns: 1fr;
         width: 100%;
     }
-        #projetosProgramacao article {
+
+    #projetosProgramacao article {
         width: 600px;
         height: 350px;
     }
@@ -641,10 +646,12 @@ main {
     #projetosProgramacao article section {
         scale: 1;
     }
+
     #projetosProgramacao article div {
         scale: 1;
     }
 }
+
 @media (max-width: 630px) {
 
     #projetosProgramacao article {
@@ -659,10 +666,12 @@ main {
     #projetosProgramacao article h4 {
         padding-left: 2%;
     }
+
     #projetosProgramacao article div {
         scale: 0.8;
     }
 }
+
 @media (max-width: 630px) {
 
     #projetosProgramacao article {
@@ -677,10 +686,12 @@ main {
     #projetosProgramacao article h4 {
         padding-left: 2%;
     }
+
     #projetosProgramacao article div {
         scale: 0.8;
     }
 }
+
 @media (max-width: 500px) {
 
     #projetosProgramacao article {
@@ -695,6 +706,7 @@ main {
     #projetosProgramacao article h4 {
         padding-left: 2%;
     }
+
     #projetosProgramacao article div {
         width: 7dvw;
         height: 7dvw;
@@ -715,6 +727,7 @@ main {
     #projetosProgramacao article h4 {
         font-size: 4dvw;
     }
+
     #projetosProgramacao article div {
         font-size: 4dvw;
     }

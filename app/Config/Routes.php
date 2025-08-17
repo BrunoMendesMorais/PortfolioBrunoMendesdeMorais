@@ -29,6 +29,5 @@ $routes->group("adm",  ['filter' => 'Adm'], function ($routes) {
 });
 
 $routes->get('adm', 'AdmController::adm');
-$routes->get('d', 'AdmController::d');
 
 $routes->post('/admLogin', 'AdmController::login');

@@ -14,16 +14,16 @@
         <label for="img_capa">
             <img id="capa" class="inputImg add" src="/img/imagensSite/plus.svg" alt="">
         </label>
-        <input type="file" name="img_capa" id="img_capa">
+        <input type="file" name="img_capa" require id="img_capa">
 
         <label for="titulo">titulo</label>
-        <input type="text" name="titulo" id="titulo">
+        <input type="text" name="titulo" require id="titulo">
 
         <label for="sub_titulo">sub-titulo</label>
-        <input type="text" name="sub_titulo" id="sub_titulo">
+        <input type="text" name="sub_titulo" require id="sub_titulo">
 
         <label for="descricao_projeto">descricao projeto</label>
-        <textarea name="descricao_projeto" id="descricao_projeto"></textarea>
+        <textarea name="descricao_projeto" require id="descricao_projeto"></textarea>
 
         <label for="img_destaque">
             <img id="destaque" class="inputImg add" src="/img/imagensSite/plus.svg" alt="">

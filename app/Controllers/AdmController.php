@@ -126,7 +126,10 @@ class AdmController extends BaseController
 
         $dados['tecnologia'] = $TecnologiaModel->find($id);
 
-        return view('adm/detalheTecnologia', $dados);
+        if ($dados['tecnologia']) {
+            return view('adm/detalheTecnologia', $dados);
+        }
+        return redirect()->to('adm/home');
     }
 
     public function excluirTecnologia($id)
@@ -135,6 +138,10 @@ class AdmController extends BaseController
         $tecnologiaModel = new TecnologiaModel();
 
         $tecnologia = $tecnologiaModel->find($id);
+
+        if (!$tecnologia) {
+            return redirect()->to('adm/home');
+        }
 
         if ($tecnologia) {
             // Caminho do arquivo da imagem
@@ -277,7 +284,10 @@ class AdmController extends BaseController
         $dados['projeto'] = $projetosModel->find($id);
         $dados['tecnologiaSelecionadas'] = $ProjetoTecnologiaModel->where('projeto_id', $id)->findAll();
 
-        return view('adm/editarProjeto', $dados);
+        if ($dados['projeto']) {
+            return view('adm/editarProjeto', $dados);
+        }
+        return redirect()->to('adm/home');
     }
 
     public function finalizarEdicaoProjeto($id)
@@ -287,6 +297,10 @@ class AdmController extends BaseController
         $projetoImagem = new ImagemProjeto();
 
         $projeto = $projetosModel->find($id);
+
+        if (!$projeto) {
+            return redirect()->to('adm/home');
+        }
 
         $ProjetoTecnologiaModel = new ProjetoTecnologiaModel();
 
@@ -315,7 +329,9 @@ class AdmController extends BaseController
             $nomeDestaque = $fileDestaque->getRandomName();
             $fileDestaque->move($uploadPathDestaque, $nomeDestaque);
             $dados['img_destaque'] = $nomeDestaque;
-            unlink($uploadPathDestaque . $projeto['img_destaque']);
+            if (file_exists($uploadPathDestaque . $projeto['img_destaque'])) {
+                unlink($uploadPathDestaque . $projeto['img_destaque']);
+            }
         }
 
         $fileCapa = $this->request->getFile('img_capa');
@@ -323,7 +339,9 @@ class AdmController extends BaseController
             $nomeCapa = $fileCapa->getRandomName();
             $fileCapa->move($uploadPathCapa, $nomeCapa);
             $dados['img_capa'] = $nomeCapa;
-            unlink($uploadPathCapa . $projeto['img_capa']);
+            if (file_exists($uploadPathCapa . $projeto['img_capa'])) {
+                unlink($uploadPathCapa . $projeto['img_capa']);
+            }
         }
 
         $projetosModel->update($id, $dados);
@@ -394,11 +412,22 @@ class AdmController extends BaseController
 
         $imagensProjeto = $projetosModel->find($id);
 
+        if (!$imagensProjeto) {
+            return redirect()->to('adm/home');
+        }
+
         $nomeImgCapa = $imagensProjeto['img_capa'];
         $nomeImgDestaque = $imagensProjeto['img_destaque'];
 
         $urlImgCapa = FCPATH . '/img/projetos/imagemCapa/' . $nomeImgCapa;
         $urlImgDestaque = FCPATH . 'img/projetos/destaque/' . $nomeImgDestaque;
+
+        if (file_exists($urlImgCapa)) {
+            unlink($urlImgCapa);
+        }
+        if (file_exists($urlImgDestaque)) {
+            unlink($urlImgDestaque);
+        }
 
 
         $imagensExtras = $projetoImagemModel->where('projeto_id', $id)->findAll();
@@ -407,12 +436,10 @@ class AdmController extends BaseController
             $nomeImg = $imagemModel->find($itens['imagem_id']);
             $urlImgExtra = FCPATH . 'img/projetos/imagens/' . $nomeImg['img_projeto'];
             $imagemModel->delete($itens['imagem_id']);
-            unlink($urlImgExtra);
+            if (file_exists($urlImgExtra)) {
+                unlink($urlImgExtra);
+            }
         }
-
-
-        unlink($urlImgCapa);
-        unlink($urlImgDestaque);
 
         $projetoImagemModel->where('projeto_id', $id)->delete();
         $projetosModel->delete($id);
@@ -450,10 +477,5 @@ class AdmController extends BaseController
             }
         }
         return redirect()->to('adm');
-    }
-
-    public function d(){
-        $session = session();
-        $session->destroy();
     }
 }

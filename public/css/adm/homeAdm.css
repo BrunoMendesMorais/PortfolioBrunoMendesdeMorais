@@ -142,7 +142,7 @@ input[type="file"] {
     }
 }
 
-#projetosProgramacao > #novoProjeto{
+#projetosProgramacao>#novoProjeto {
     display: grid;
     align-items: center;
     justify-content: center;
@@ -151,7 +151,7 @@ input[type="file"] {
     grid-template-columns: 1fr;
 }
 
-#novoProjeto img{
+#novoProjeto img {
     grid-area: img;
     width: 50px;
     text-align: center;
@@ -199,6 +199,9 @@ input[type="file"] {
 
 #projetosProgramacao .projet .img {
     grid-area: img;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
 }
 
 #projetosProgramacao .projet h4 {
