@@ -4,26 +4,10 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Portfólio de Bruno Mendes de Morais, desenvolvedor full stack especializado em front-end e bak-cend. Projetos em PHP, CodeIgniter, e mais.">
-    <meta name="keywords" content="Desenvolvedor full stack, portfólio, PHP, JavaScript, HTML, CodeIgniter, desenvolvimento web">
-    <meta name="author" content="Bruno Mendes de Morais">
-
-    <!-- <meta name="robots" content="index, follow"> -->
-
-    <!-- Open Graph (para redes sociais) -->
-    <meta property="og:title" content="Portfólio de Bruno Mendes de Morais - Desenvolvedor Full Stack">
-    <meta property="og:description" content="Confira meus projetos e habilidades em desenvolvimento full stack.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mendesmoraisbruno.com">
-    <meta property="og:image" content="https://mendesmoraisbruno.com/imagem-de-capa.png">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:title" content="Portfólio de Seu Nome - Desenvolvedor Full Stack">
-    <meta name="twitter:description" content="Confira meus projetos e habilidades em desenvolvimento full stack.">
-    <meta name="twitter:image" content="https://mendesmoraisbruno.com/imagem-de-capa.png">
-
     <link rel="stylesheet" href="/css/partials/user.css">
     <script src="/js/partials/user.js" defer></script>
+    <link rel="icon" href="img/imagensSite/fav.ico" type="image/x-icon">
+
 
     <?= $this->renderSection('head') ?>
 </head>

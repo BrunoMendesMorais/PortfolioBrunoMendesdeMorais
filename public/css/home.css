@@ -320,6 +320,10 @@ main {
     overflow: hidden;
 }
 
+#verEmail{
+    cursor: pointer;
+}
+
 /* --- tema --- */
 
 .escuro #contato address {

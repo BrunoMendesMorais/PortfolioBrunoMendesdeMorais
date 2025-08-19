@@ -3,7 +3,23 @@
 <?= $this->section('head') ?>
 
 <link rel="stylesheet" href="css/home.css">
-<script src="js/main/Home.js" defer></script>
+
+<meta name="description" content="Portfólio de Bruno Mendes de Morais, desenvolvedor full stack especializado em front-end e bak-cend. Projetos em PHP, CodeIgniter, e mais.">
+<meta name="keywords" content="Desenvolvedor full stack, portfólio, PHP, JavaScript, HTML, CodeIgniter, desenvolvimento web">
+<meta name="author" content="Bruno Mendes de Morais">
+
+<meta property="og:title" content="Portfólio de Bruno Mendes de Morais - Desenvolvedor Full Stack">
+<meta property="og:description" content="Confira meus projetos e habilidades em desenvolvimento full stack.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mendesmoraisbruno.com">
+<meta property="og:image" content="https://mendesmoraisbruno.com/imagem-de-capa.png">
+
+
+<meta name="twitter:title" content="Portfólio de Seu Nome - Desenvolvedor Full Stack">
+<meta name="twitter:description" content="Confira meus projetos e habilidades em desenvolvimento full stack.">
+<meta name="twitter:image" content="https://mendesmoraisbruno.com/imagem-de-capa.png">
+
+
 <?= $this->endsection('head') ?>
 
 <?= $this->section('conteudo') ?>
@@ -79,8 +95,8 @@
                 <path d="M32,56H224a0,0,0,0,1,0,0V192a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56A0,0,0,0,1,32,56Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
                 <polyline points="224 56 128 144 32 56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
             </svg>
-            <p>mendesdemoraisbruno@gmail.com</p>
-            <a href="">Copiar</a>
+            <p>contato.devbrunomendes@gmail.com</p>
+            <a id="verEmail">Copiar</a>
         </address>
         <address>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -92,7 +108,7 @@
                 <circle fill="currentColor" cx="88" cy="84" r="12" />
             </svg>
             <p>www.linkedin.com/in/bruno-mendes-de-morais</p>
-            <a href="">Ir para</a>
+            <a href="https:/linkedin.com/in/bruno-mendes-de-morais" target="_blank">Ir para</a>
         </address>
     </section>
 </main>
@@ -115,6 +131,19 @@
         }
 
     }
+
+    document.getElementById("verEmail").addEventListener("click", function(e) {
+        const email = 'contato.devbrunomendes@gmail.com';
+
+        navigator.clipboard.writeText(email).then(() => {
+            this.textContent = "Copiado!!!";
+
+            // (Opcional) Voltar ao texto original depois de 2 segundos
+            setTimeout(() => {
+                this.textContent = "Copiar";
+            }, 2000);
+        })
+    });
 </script>
 
 <?= $this->endsection('conteudo') ?>
