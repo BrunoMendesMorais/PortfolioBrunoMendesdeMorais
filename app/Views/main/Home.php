@@ -27,7 +27,7 @@
     </section>
     <section id="projetos">
         <h3>PROJETOS</h3>
-        <div>
+        <!-- <div>
             <form action="/" method="#">
                 <input name="Pesquisa" autocomplete="off" id="Pesquisa" placeholder="procure por tecnologia ou projeto..." type="search">
                 <button>
@@ -39,7 +39,7 @@
                 </button>
             </form>
             <a href="/Projetos">VER TODOS</a>
-        </div>
+        </div> -->
         <section id="projetosProgramacao">
             <?php foreach ($projeto as $itens): ?>
                 <article>

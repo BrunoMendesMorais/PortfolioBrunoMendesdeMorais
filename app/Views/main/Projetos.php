@@ -12,7 +12,7 @@
     <section id="projetos">
         <h3>PROJETOS</h3>
         <div>
-            <form action="/" method="#" style="width: 100%;">
+            <!-- <form action="/" method="#" style="width: 100%;">
                 <input name="Pesquisa" autocomplete="off" id="Pesquisa" placeholder="procure por tecnologia ou projeto..." type="search">
                 <button>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -21,7 +21,7 @@
                         <line x1="168.57" y1="168.57" x2="224" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" />
                     </svg>
                 </button>
-            </form>
+            </form> -->
         </div>
         <section id="projetosProgramacao">
             <?php foreach ($projeto as $itens): ?>
